@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import type { Dictionary } from "@/content";
 import { divisionPath, pagePath, type Locale } from "@/lib/i18n/routes";
 
-// The live network hero. The homepage uses it as is; other pages pass their own
+// The hero with the live globe and division islands. The homepage uses it as is; other pages pass their own
 // title, text and buttons.
 export function Hero({
   lang,
@@ -30,10 +30,10 @@ export function Hero({
       data-surface="dark"
       className="relative isolate flex min-h-svh flex-col overflow-hidden lg:max-h-[1040px]"
     >
-      {/* Keeps the text readable where the network passes behind it. */}
+      {/* Softens the particles behind the text; they already fade themselves there. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(8,9,11,0.5)_0%,rgba(8,9,11,0.9)_24%,rgba(8,9,11,0.88)_66%,rgba(8,9,11,0.1)_84%,rgba(8,9,11,0.4)_100%)] lg:bg-[linear-gradient(90deg,rgba(8,9,11,0.97)_0%,rgba(8,9,11,0.84)_36%,rgba(8,9,11,0)_68%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(8,9,11,0)_0%,rgba(8,9,11,0.4)_40%,rgba(8,9,11,0.4)_62%,rgba(8,9,11,0)_80%)] lg:bg-[linear-gradient(90deg,rgba(8,9,11,0.55)_0%,rgba(8,9,11,0.4)_36%,rgba(8,9,11,0)_60%)]"
       />
       {/* Equal rows above and below keep the text at the true middle of the hero.
           Very short screens stack from the top instead, so the hero never outgrows the screen by much. */}

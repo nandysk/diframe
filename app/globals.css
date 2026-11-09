@@ -467,6 +467,84 @@
     stroke-dashoffset: 0;
   }
 
+  /* Isometric scenes: three materials, each with a lit top, a front and a shaded side. */
+  .iso {
+    --iso-floor-top: #e8eaef;
+    --iso-floor-front: #d3d6de;
+    --iso-floor-side: #c0c4ce;
+    --iso-grid: rgba(10, 11, 13, 0.08);
+    --iso-metal-top: #5b5f6b;
+    --iso-metal-front: #393c45;
+    --iso-metal-side: #2a2c33;
+    --iso-panel-top: #ffffff;
+    --iso-panel-front: #e6e8ee;
+    --iso-panel-side: #d2d5dd;
+    --iso-slot: #1f2127;
+    --iso-led-off: #50535d;
+    --iso-edge: rgba(10, 11, 13, 0.16);
+    --iso-screen-text: rgba(255, 255, 255, 0.85);
+    --iso-cloud: #ffffff;
+    --iso-accent-top: color-mix(in oklab, var(--hue), #fff 28%);
+    --iso-accent-front: var(--hue);
+    --iso-accent-side: color-mix(in oklab, var(--hue), #000 28%);
+    --iso-ink: rgba(10, 11, 13, 0.2);
+    --iso-code: rgba(255, 255, 255, 0.5);
+    --iso-shadow: rgba(10, 11, 13, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .iso {
+      --iso-floor-top: #272a34;
+      --iso-floor-front: #1b1d24;
+      --iso-floor-side: #131419;
+      --iso-grid: rgba(255, 255, 255, 0.08);
+      --iso-metal-top: #6d7180;
+      --iso-metal-front: #454955;
+      --iso-metal-side: #30333c;
+      --iso-panel-top: #474a55;
+      --iso-panel-front: #33363e;
+      --iso-panel-side: #272930;
+      --iso-edge: rgba(255, 255, 255, 0.14);
+      --iso-cloud: #c9ccd5;
+      --iso-ink: rgba(255, 255, 255, 0.24);
+      --iso-shadow: rgba(0, 0, 0, 0.28);
+    }
+  }
+
+  [data-surface="dark"] .iso,
+  :root[data-theme="dark"] .iso {
+    --iso-floor-top: #272a34;
+    --iso-floor-front: #1b1d24;
+    --iso-floor-side: #131419;
+    --iso-grid: rgba(255, 255, 255, 0.08);
+    --iso-metal-top: #6d7180;
+    --iso-metal-front: #454955;
+    --iso-metal-side: #30333c;
+    --iso-panel-top: #474a55;
+    --iso-panel-front: #33363e;
+    --iso-panel-side: #272930;
+    --iso-edge: rgba(255, 255, 255, 0.14);
+    --iso-cloud: #c9ccd5;
+    --iso-ink: rgba(255, 255, 255, 0.24);
+    --iso-shadow: rgba(0, 0, 0, 0.28);
+  }
+
+  .iso-blink {
+    animation: iso-blink 2.4s steps(1) infinite;
+  }
+
+  @keyframes iso-blink {
+    50% {
+      opacity: 0.25;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .iso-blink {
+      animation: none;
+    }
+  }
+
   /* A division choice in the contact form. The mark fills as well as the color
      changes, so the selection doesn't depend on color alone. */
   .topic-choice {
