@@ -9,6 +9,10 @@ import { IsoScene } from "@/components/solutions/iso-scenes";
 // Color appears where a signal is active: once on load, when each division lights
 // up in turn, and when a division is chosen, which brings its island to the front
 // and turns the globe to its region.
+//
+// On a division page (`focus`), that division stays chosen: the globe faces its region
+// and only its own island shows, large at the front. The
+// page marks where the drawing goes with a `data-globe-anchor` element.
 
 type RGB = readonly [number, number, number];
 type Vec = [number, number, number];
@@ -27,6 +31,8 @@ const WHITE: RGB = [255, 255, 255];
 const RESTING_GLOW: RGB = [120, 110, 255];
 const ISLAND_GRAY = "#8b8e98";
 const BOOT_STEP = 0.42;
+// How large a division page's own island is, relative to the globe frame.
+const FOCUS_SCALE = 1.35;
 const TAU = Math.PI * 2;
 // Each division's region on the globe, as [longitude, latitude] in degrees.
 const REGIONS = [[0, 22], [62, -18], [124, 30], [186, -24], [246, 16], [306, -30]] as const;
@@ -125,9 +131,11 @@ function standalone(svg: SVGSVGElement, hue: string) {
 export function HeroNetwork({
   chips,
   label,
+  focus,
 }: {
-  chips: ReadonlyArray<{ label: string; href: string }>;
-  label: string;
+  chips?: ReadonlyArray<{ label: string; href: string }>;
+  label?: string;
+  focus?: number;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const scenesRef = useRef<HTMLDivElement>(null);
@@ -144,7 +152,9 @@ export function HeroNetwork({
     const lowPower = isLowPower();
     const still = () => reduce.matches || lowPower;
 
-    let W = 0, H = 0, dpr = 1, wide = true, raf = 0, last = 0, clock = 0, active = -1, visible = true;
+    let W = 0, H = 0, dpr = 1, wide = true, raf = 0, last = 0, clock = 0, visible = true;
+    let active = focus ?? -1;
+    const focused = focus !== undefined;
     let center: Frame = { x: 0, y: 0, r: 0 };
     let mouse: { x: number; y: number } | null = null;
     let text: { l: number; r: number; t: number; b: number } | null = null;
@@ -226,7 +236,7 @@ export function HeroNetwork({
     };
 
     const sizeIslands = () => {
-      const largest = Math.ceil(center.r * 1.05);
+      const largest = Math.ceil(center.r * (focused ? FOCUS_SCALE : 1.05));
       if (Math.abs(largest - islandWidth) > 8) rasterize(largest);
     };
 
@@ -241,6 +251,16 @@ export function HeroNetwork({
     // Desktop: to the right of the text. Phones: in the open space above the headline,
     // or behind the division links when that space is too small.
     const place = () => {
+      const anchor = host.querySelector("[data-globe-anchor]")?.getBoundingClientRect();
+      if (anchor && anchor.width) {
+        const rect = host.getBoundingClientRect();
+        center = {
+          x: anchor.left - rect.left + anchor.width / 2,
+          y: anchor.top - rect.top + anchor.height * 0.36,
+          r: Math.min(anchor.width / 2.2, anchor.height / 1.95),
+        };
+        return;
+      }
       if (wide) {
         center = { x: W * 0.73, y: H * 0.48, r: Math.min(W * 0.165, H * 0.29) };
         return;
@@ -327,7 +347,10 @@ export function HeroNetwork({
       ctx.fillRect(0, 0, W, H);
 
       // The islands' orbit: a chosen division swings to the front.
-      if (active >= 0) {
+      if (focused) {
+        // The globe sways gently around the division's region.
+        spin = (-REGIONS[active][0] * Math.PI) / 180 + Math.sin(clock * 0.25) * 0.35;
+      } else if (active >= 0) {
         const target = Math.PI / 2 - (active * Math.PI) / 3;
         orbit = moving ? orbit + turn(orbit, target) * Math.min(1, dt * 3) : target;
         const facing = (-REGIONS[active][0] * Math.PI) / 180;
@@ -338,8 +361,10 @@ export function HeroNetwork({
       }
       const [rx, ry] = [center.r * 1.18, center.r * 0.58];
       const ringY = center.y + center.r * 0.12;
-      const slots = COLORS.map((_, k) => {
-        const angle = orbit + (k * Math.PI) / 3;
+      // A division page shows only its own island, so the orbit stays empty there.
+      const ring = focused ? [] : COLORS.map((_, k) => k);
+      const slots = ring.map((k, n) => {
+        const angle = orbit + (n * TAU) / ring.length;
         const depth = (Math.sin(angle) + 1) / 2;
         return { k, x: center.x + Math.cos(angle) * rx, y: ringY + Math.sin(angle) * ry, depth, scale: 0.6 + 0.45 * depth };
       });
@@ -357,12 +382,14 @@ export function HeroNetwork({
         drawIsland(s.k, s.x, s.y, width, levels[s.k], alpha);
       };
 
-      ctx.strokeStyle = rgba(WHITE, 0.12);
-      ctx.setLineDash([2, 6]);
-      ctx.beginPath();
-      ctx.ellipse(center.x, ringY, rx, ry, 0, 0, TAU);
-      ctx.stroke();
-      ctx.setLineDash([]);
+      if (!focused) {
+        ctx.strokeStyle = rgba(WHITE, 0.12);
+        ctx.setLineDash([2, 6]);
+        ctx.beginPath();
+        ctx.ellipse(center.x, ringY, rx, ry, 0, 0, TAU);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
 
       const byDepth = slots.slice().sort((a, b) => a.depth - b.depth);
       byDepth.filter((s) => s.depth < 0.5).forEach(islandAt);
@@ -440,9 +467,15 @@ export function HeroNetwork({
         return [x, y] as const;
       });
 
+      // A division page's own island, large at the front.
+      const lead = focused
+        ? { k: active, x: center.x, y: ringY + ry * 1.3 + Math.sin(clock * 0.9) * 4, depth: 1, scale: FOCUS_SCALE }
+        : null;
+
       // A beam from the chosen region to its island.
-      if (lit >= 0) {
-        const s = slots[lit];
+      const target = lead ?? slots.find((s) => s.k === lit);
+      if (lit >= 0 && target) {
+        const s = target;
         ctx.strokeStyle = rgba(COLORS[lit], 0.7);
         ctx.lineWidth = 1.4;
         ctx.setLineDash([3, 4]);
@@ -456,6 +489,7 @@ export function HeroNetwork({
       }
 
       byDepth.filter((s) => s.depth >= 0.5).forEach(islandAt);
+      if (lead) drawIsland(lead.k, lead.x, lead.y, center.r * lead.scale, levels[lead.k], 1);
     };
 
     const draw = (now: number) => {
@@ -561,17 +595,18 @@ export function HeroNetwork({
       document.removeEventListener("visibilitychange", onVisibility);
       reduce.removeEventListener("change", onMotionChange);
     };
-  }, []);
+  }, [focus]);
 
   return (
     <>
       <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 -z-20 block h-full w-full" />
       {/* The division illustrations the canvas draws as islands. */}
       <div ref={scenesRef} hidden aria-hidden="true">
-        {chips.map((chip, index) => (
-          <IsoScene key={chip.href} index={index} />
+        {COLORS.map((_, index) => (
+          <IsoScene key={index} index={index} />
         ))}
       </div>
+      {chips && (
       <nav aria-label={label}>
         <ul className="flex flex-wrap gap-2">
           {chips.map((chip, index) => (
@@ -595,6 +630,7 @@ export function HeroNetwork({
           ))}
         </ul>
       </nav>
+      )}
     </>
   );
 }

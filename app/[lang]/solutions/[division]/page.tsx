@@ -3,15 +3,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Closing } from "@/components/home/closing";
+import { HeroNetwork } from "@/components/home/hero-network";
 import { Process } from "@/components/home/process";
 import { Certifications } from "@/components/site/certifications";
 import { divisionTopic } from "@/lib/contact/validate";
-import { GlassStage, RevealText, order } from "@/components/site/motion";
-import { DivisionDiagram } from "@/components/solutions/division-diagram";
+import { RevealText, order } from "@/components/site/motion";
 import { ServiceIcon } from "@/components/solutions/service-icon";
 import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { getDictionary } from "@/content";
 import { cn } from "@/lib/utils";
 import { divisionAlternates, pageMetadata } from "@/lib/i18n/metadata";
@@ -54,7 +53,7 @@ export default async function DivisionPage({ params }: PageProps<"/[lang]/soluti
   return (
     <>
       <section data-surface="dark" className="relative isolate overflow-hidden pb-[clamp(56px,7vw,104px)] pt-28 md:pt-36">
-        <GlassStage />
+        <HeroNetwork focus={index} />
         <div className="wrap grid items-center gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
           <div>
             <nav aria-label={labels.breadcrumb} className="hero-fade" style={{ "--delay": "0ms" } as React.CSSProperties}>
@@ -93,9 +92,8 @@ export default async function DivisionPage({ params }: PageProps<"/[lang]/soluti
               </a>
             </div>
           </div>
-          <Card variant="glass" data-reveal="card" className="rounded-[32px] p-6 md:p-10 md:rounded-[40px]">
-            <DivisionDiagram index={index} />
-          </Card>
+          {/* Where the globe and this division's island are drawn. */}
+          <div data-globe-anchor="" aria-hidden="true" className="aspect-[4/3] w-full" />
         </div>
       </section>
 
