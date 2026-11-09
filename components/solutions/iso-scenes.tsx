@@ -4,38 +4,38 @@
 
 import type { ReactNode } from "react";
 
-const UNIT = 25;
-const COS = Math.cos(Math.PI / 6);
+export const UNIT = 25;
+export const COS = Math.cos(Math.PI / 6);
 const ORIGIN = { x: 222, y: 132 };
 // A circle of radius 1 on the ground projects to an ellipse with these half-axes.
-const RX = Math.SQRT2 * COS * UNIT;
-const RY = Math.SQRT1_2 * UNIT;
+export const RX = Math.SQRT2 * COS * UNIT;
+export const RY = Math.SQRT1_2 * UNIT;
 
-type Point = readonly [number, number];
+export type Point = readonly [number, number];
 
 // Grid position (x to the lower right, y to the lower left, z up) to screen position.
-const at = (x: number, y: number, z = 0): Point => [
+export const at = (x: number, y: number, z = 0): Point => [
   ORIGIN.x + (x - y) * COS * UNIT,
   ORIGIN.y + (x + y) * 0.5 * UNIT - z * UNIT,
 ];
 
-const n = (value: number) => value.toFixed(1);
-const pts = (points: Point[]) => points.map(([x, y]) => `${n(x)},${n(y)}`).join(" ");
+export const n = (value: number) => value.toFixed(1);
+export const pts = (points: Point[]) => points.map(([x, y]) => `${n(x)},${n(y)}`).join(" ");
 
 // Flat rectangles on the three planes a viewer can see.
-const front = (x0: number, x1: number, y: number, z0: number, z1: number) =>
+export const front = (x0: number, x1: number, y: number, z0: number, z1: number) =>
   pts([at(x0, y, z0), at(x1, y, z0), at(x1, y, z1), at(x0, y, z1)]);
-const side = (x: number, y0: number, y1: number, z0: number, z1: number) =>
+export const side = (x: number, y0: number, y1: number, z0: number, z1: number) =>
   pts([at(x, y0, z0), at(x, y1, z0), at(x, y1, z1), at(x, y0, z1)]);
-const top = (x0: number, x1: number, y0: number, y1: number, z: number) =>
+export const top = (x0: number, x1: number, y0: number, y1: number, z: number) =>
   pts([at(x0, y0, z), at(x1, y0, z), at(x1, y1, z), at(x0, y1, z)]);
 
-type Material = "floor" | "metal" | "panel" | "accent";
+export type Material = "floor" | "metal" | "panel" | "accent";
 
-type Box = { x: number; y: number; z?: number; w: number; d: number; h: number; material: Material };
+export type Box = { x: number; y: number; z?: number; w: number; d: number; h: number; material: Material };
 
 // The three visible faces: top, front (facing lower left) and side (facing lower right).
-function Block({ x, y, z = 0, w, d, h, material, children }: Box & { children?: ReactNode }) {
+export function Block({ x, y, z = 0, w, d, h, material, children }: Box & { children?: ReactNode }) {
   const m = `var(--iso-${material}`;
   return (
     <g strokeLinejoin="round" strokeWidth="1" stroke="var(--iso-edge)">
@@ -48,11 +48,11 @@ function Block({ x, y, z = 0, w, d, h, material, children }: Box & { children?: 
 }
 
 // A point on a box's front face, measured from its lower-left corner.
-const onFront = (box: Box, a: number, b: number) => at(box.x + a, box.y + box.d, (box.z ?? 0) + b);
-const frontRect = (box: Box, a: number, b: number, w: number, h: number) =>
+export const onFront = (box: Box, a: number, b: number) => at(box.x + a, box.y + box.d, (box.z ?? 0) + b);
+export const frontRect = (box: Box, a: number, b: number, w: number, h: number) =>
   front(box.x + a, box.x + a + w, box.y + box.d, (box.z ?? 0) + b, (box.z ?? 0) + b + h);
 
-function Floor() {
+export function Floor() {
   return (
     <>
       <Block x={0} y={0} z={-0.5} w={9} d={7} h={0.5} material="floor" />
@@ -68,12 +68,12 @@ function Floor() {
   );
 }
 
-function Segment({ from, to, draw }: { from: Point; to: Point; draw?: boolean }) {
+export function Segment({ from, to, draw }: { from: Point; to: Point; draw?: boolean }) {
   return <line pathLength={draw ? 1 : undefined} x1={n(from[0])} y1={n(from[1])} x2={n(to[0])} y2={n(to[1])} />;
 }
 
 // Lines that draw themselves in, in the division's color, when the scene comes into view.
-function Signal({ paths, width = 1.5 }: { paths: Point[][]; width?: number }) {
+export function Signal({ paths, width = 1.5 }: { paths: Point[][]; width?: number }) {
   return (
     <g className="sig" fill="none" stroke="var(--hue)" strokeWidth={width} strokeLinecap="round" strokeLinejoin="round">
       {paths.map((path) => (
@@ -83,7 +83,7 @@ function Signal({ paths, width = 1.5 }: { paths: Point[][]; width?: number }) {
   );
 }
 
-function Cylinder({ x, y, z = 0, r, h, material = "metal", ring }: { x: number; y: number; z?: number; r: number; h: number; material?: Material; ring?: boolean }) {
+export function Cylinder({ x, y, z = 0, r, h, material = "metal", ring }: { x: number; y: number; z?: number; r: number; h: number; material?: Material; ring?: boolean }) {
   const [cx, bottom] = at(x, y, z);
   const upper = bottom - h * UNIT;
   const [rx, ry] = [RX * r, RY * r];
@@ -109,7 +109,7 @@ function Cylinder({ x, y, z = 0, r, h, material = "metal", ring }: { x: number; 
   );
 }
 
-function Rack({ box, seed }: { box: Box; seed: number }) {
+export function Rack({ box, seed }: { box: Box; seed: number }) {
   const units = Math.floor((box.h - 0.5) / 0.46);
   return (
     <Block {...box}>
@@ -130,7 +130,7 @@ function Rack({ box, seed }: { box: Box; seed: number }) {
 }
 
 // Short text lines on a front face, as on a screen or a page.
-function Lines({ box, a, b, widths, gap = 0.2, stroke = "var(--iso-ink)", width = 1.6 }: { box: Box; a: number; b: number; widths: number[]; gap?: number; stroke?: string; width?: number }) {
+export function Lines({ box, a, b, widths, gap = 0.2, stroke = "var(--iso-ink)", width = 1.6 }: { box: Box; a: number; b: number; widths: number[]; gap?: number; stroke?: string; width?: number }) {
   return (
     <g stroke={stroke} strokeWidth={width} strokeLinecap="round">
       {widths.map((w, i) => (

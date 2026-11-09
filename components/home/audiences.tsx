@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AudienceDiagram } from "@/components/home/audience-diagram";
+import { AudienceScene } from "@/components/home/audience-scenes";
 import { GlassStage, RevealText, order } from "@/components/site/motion";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -33,7 +33,7 @@ export function Audiences({ lang, dict }: { lang: Locale; dict: Dictionary }) {
                   style={order(index)}
                   className="w-full gap-6 rounded-[28px] p-6 text-base md:p-8"
                 >
-                  <AudienceDiagram kind={audience.kind} />
+                  <AudienceScene kind={audience.kind} index={index} />
                   <div>
                     <h3 className="text-[clamp(1.375rem,2vw,1.625rem)] leading-[1.18] tracking-[-0.022em]">
                       {audience.name}
