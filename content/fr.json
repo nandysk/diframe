@@ -1,0 +1,689 @@
+{
+  "meta": {
+    "siteName": "Diframe",
+    "homeTitle": "Diframe | L’ingénierie de la transformation numérique",
+    "description": "Diframe aide les organisations à se moderniser grâce à l’ingénierie logicielle, à l’IA et à l’automatisation, aux données, à l’infrastructure informatique et à la cybersécurité.",
+    "shareAlt": "Le logo de Diframe sur un fond sombre éclairé de bleu et de violet, au-dessus de l’adresse diframe.studio."
+  },
+  "a11y": {
+    "skip": "Aller au contenu principal",
+    "mainNav": "Navigation principale",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "switchToDark": "Passer au thème sombre",
+    "switchToLight": "Passer au thème clair",
+    "language": "Langue",
+    "home": "Accueil Diframe",
+    "divisionLinks": "Nos six divisions"
+  },
+  "nav": {
+    "solutions": "Solutions",
+    "projects": "Projets",
+    "showcase": "Réalisations",
+    "company": "Entreprise",
+    "contact": "Parlons-en"
+  },
+  "hero": {
+    "title": "Concevoir l’avenir des entreprises.",
+    "text": "Nous concevons des solutions numériques intelligentes qui transforment la façon dont les entreprises fonctionnent, communiquent et se développent.",
+    "primary": "Découvrir nos solutions",
+    "secondary": "Parlons-en"
+  },
+  "about": {
+    "label": "À propos de Diframe",
+    "statement": "Diframe est une entreprise de transformation numérique et de technologie. Nous concevons, développons et sécurisons les logiciels, les données et les infrastructures sur lesquels les organisations s’appuient chaque jour, des startups aux multinationales, en passant par les gouvernements et les ONG.",
+    "text": "Ingénierie logicielle, IA et automatisation, données, infrastructure informatique, cybersécurité et design numérique sont réunis au sein d’une même équipe : vous avez un seul partenaire, du premier plan au support dans la durée.",
+    "link": "En savoir plus sur nous"
+  },
+  "proof": {
+    "title": "La confiance d’organisations de tous secteurs depuis 2021.",
+    "stats": [
+      {
+        "lead": "Plus de",
+        "value": "20",
+        "label": "clients"
+      },
+      {
+        "lead": "Plus de",
+        "value": "50",
+        "label": "déploiements réseau et serveurs"
+      },
+      {
+        "lead": "Plus de",
+        "value": "1 000",
+        "label": "utilisateurs de notre SaaS"
+      }
+    ],
+    "clientsLabel": "Ils nous ont fait confiance",
+    "clients": [
+      "SLB",
+      "Aker Solutions",
+      "OneSubsea",
+      "La Cité des Grands Lacs",
+      "Lamba Foundation",
+      "Supersonic",
+      "Infinitech Congo"
+    ]
+  },
+  "divisions": {
+    "title": "Six domaines d’expertise. Un seul partenaire responsable.",
+    "items": [
+      {
+        "name": "Solutions numériques et ingénierie logicielle",
+        "short": "Logiciels",
+        "text": "Plateformes web, applications métier et portails conçus pour durer."
+      },
+      {
+        "name": "IA et automatisation intelligente",
+        "short": "IA et automatisation",
+        "text": "Automatisez les tâches répétitives grâce à une IA adaptée à votre façon de travailler."
+      },
+      {
+        "name": "Données et Business Intelligence",
+        "short": "Données et BI",
+        "text": "Des tableaux de bord et des rapports qui transforment des données dispersées en décisions."
+      },
+      {
+        "name": "Infrastructure informatique et cloud",
+        "short": "Infrastructure et cloud",
+        "text": "Réseaux, serveurs et environnements cloud, conçus, déployés et maintenus."
+      },
+      {
+        "name": "Cybersécurité et confiance numérique",
+        "short": "Cybersécurité",
+        "text": "La protection de vos systèmes, de vos données et de vos équipes, du pare-feu à la politique de sécurité."
+      },
+      {
+        "name": "Design numérique et gestion documentaire",
+        "short": "Design et documents",
+        "text": "Design graphique, identité de marque et archivage documentaire en ligne."
+      }
+    ],
+    "explore": "Découvrir cette division"
+  },
+  "solutions": {
+    "overview": {
+      "title": "Six divisions, une seule équipe.",
+      "text": "Logiciels, IA, données, infrastructure, sécurité et design réunis au même endroit, pour que les systèmes dont vous dépendez soient pensés comme un tout.",
+      "description": "Les six divisions de Diframe : ingénierie logicielle, IA et automatisation, données, infrastructure informatique et cloud, cybersécurité, design numérique et gestion documentaire.",
+      "primary": "Voir les six divisions",
+      "listTitle": "Ce que fait chaque division",
+      "closingTitle": "Vous ne savez pas par où commencer ?",
+      "closingText": "Dites-nous ce que vous cherchez à résoudre, et nous vous orienterons vers la bonne équipe."
+    },
+    "labels": {
+      "breadcrumb": "Fil d’Ariane",
+      "seeServices": "Voir nos services",
+      "services": "Ce que fait cette division",
+      "needs": "Quand nous contacter",
+      "certifications": "Dans ce domaine, les certifications de notre équipe incluent",
+      "others": "Autres divisions",
+      "relatedProjects": "Projets associés"
+    },
+    "items": [
+      {
+        "lead": "Nous concevons et développons des sites web, des applications métier et des produits SaaS adaptés au fonctionnement de votre organisation.",
+        "services": [
+          {
+            "name": "Développement de sites web d’entreprise",
+            "text": "Des sites rapides et accessibles qui présentent clairement votre organisation.",
+            "icon": "website"
+          },
+          {
+            "name": "Développement de logiciels sur mesure",
+            "text": "Des logiciels conçus autour de vos processus, lorsque les outils standard ne conviennent pas.",
+            "icon": "customSoftware"
+          },
+          {
+            "name": "Développement d’applications web et mobiles",
+            "text": "Des applications pour vos équipes et vos clients, sur le web et sur téléphone.",
+            "icon": "webMobile"
+          },
+          {
+            "name": "Développement de produits SaaS",
+            "text": "Des logiciels par abonnement, de la première version à un produit utilisé par de nombreuses personnes.",
+            "icon": "saas"
+          },
+          {
+            "name": "Solutions de noms de domaine personnalisés",
+            "text": "Des noms de domaine choisis, enregistrés et configurés pour votre organisation et ses services.",
+            "icon": "domain"
+          }
+        ],
+        "needs": [
+          "Des tâches importantes passent encore par des tableurs et des e-mails.",
+          "Les logiciels standard ne correspondent pas au travail de votre équipe.",
+          "Vous avez une idée de produit et cherchez une équipe pour le réaliser."
+        ],
+        "stat": {
+          "lead": "Plus de",
+          "value": "1 000",
+          "label": "utilisateurs de notre SaaS"
+        },
+        "certifications": []
+      },
+      {
+        "lead": "Nous automatisons les tâches répétitives et connectons l’IA à vos opérations quotidiennes, pour que vos équipes se concentrent sur les décisions qui ont besoin d’elles.",
+        "services": [
+          {
+            "name": "Développement d’agents IA",
+            "text": "Des agents qui réalisent des tâches définies à partir de vos documents, de vos outils et de vos règles.",
+            "icon": "aiAgent"
+          },
+          {
+            "name": "Solutions d’IA agentique",
+            "text": "Des systèmes d’agents qui planifient et accomplissent un travail en plusieurs étapes, en laissant les décisions clés aux personnes.",
+            "icon": "agentic"
+          },
+          {
+            "name": "Automatisation des processus métier",
+            "text": "Des étapes manuelles remplacées par des étapes automatisées, de la demande à l’approbation.",
+            "icon": "processAutomation"
+          },
+          {
+            "name": "Automatisation intelligente des flux de travail",
+            "text": "Des flux qui acheminent, vérifient et mettent à jour l’information entre vos outils.",
+            "icon": "workflow"
+          },
+          {
+            "name": "Intégration de l’IA aux opérations",
+            "text": "Une IA connectée aux systèmes que vos équipes utilisent déjà.",
+            "icon": "aiIntegration"
+          }
+        ],
+        "needs": [
+          "Votre équipe répète chaque jour les mêmes étapes manuelles.",
+          "Des demandes restent bloquées en attendant d’être transmises.",
+          "Vous voulez utiliser l’IA sans savoir où elle serait utile."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": []
+      },
+      {
+        "lead": "Nous rassemblons vos données dispersées et les transformons en tableaux de bord et en rapports exploitables par vos équipes.",
+        "services": [
+          {
+            "name": "Analyse de données",
+            "text": "L’analyse de vos données pour répondre à des questions métier précises.",
+            "icon": "analytics"
+          },
+          {
+            "name": "Solutions Microsoft Power BI",
+            "text": "Des rapports et des modèles Power BI, configurés pour vos données et vos équipes.",
+            "icon": "powerBi"
+          },
+          {
+            "name": "Tableaux de bord interactifs",
+            "text": "Une vue actualisée de vos chiffres clés, à filtrer et à explorer.",
+            "icon": "dashboards"
+          },
+          {
+            "name": "Rapports d’activité",
+            "text": "Des rapports réguliers qui remplacent la compilation manuelle.",
+            "icon": "reporting"
+          },
+          {
+            "name": "Aide à la décision par les données",
+            "text": "Des chiffres et des comparaisons clairs pour appuyer les décisions à chaque niveau.",
+            "icon": "decision"
+          }
+        ],
+        "needs": [
+          "Vos chiffres sont répartis entre plusieurs fichiers et systèmes.",
+          "Préparer un rapport demande des jours de travail manuel.",
+          "Vos équipes donnent des chiffres différents pour la même chose."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": [
+          "Microsoft Power BI Data Analyst (PL-300)"
+        ]
+      },
+      {
+        "lead": "Nous concevons, déployons et gérons les réseaux, les serveurs et les environnements cloud dont votre organisation dépend.",
+        "services": [
+          {
+            "name": "Conception d’infrastructures informatiques",
+            "text": "Un plan d’infrastructure établi selon vos sites, vos utilisateurs et votre croissance.",
+            "icon": "infrastructureDesign"
+          },
+          {
+            "name": "Configuration et administration de serveurs",
+            "text": "Des serveurs installés, configurés et tenus à jour.",
+            "icon": "server"
+          },
+          {
+            "name": "Architecture et déploiement de réseaux",
+            "text": "Des réseaux conçus et installés pour vos bureaux et vos sites.",
+            "icon": "networkArchitecture"
+          },
+          {
+            "name": "Infrastructure cloud",
+            "text": "Des environnements cloud configurés et organisés pour vos charges de travail.",
+            "icon": "cloud"
+          },
+          {
+            "name": "Gestion des systèmes informatiques",
+            "text": "Une gestion continue de vos systèmes, pour traiter les problèmes tôt.",
+            "icon": "systemsManagement"
+          }
+        ],
+        "needs": [
+          "Vous ouvrez un nouveau site et avez besoin d’un réseau.",
+          "Vos serveurs ou votre réseau ont grandi sans plan clair.",
+          "Vous voulez migrer une partie de vos systèmes vers le cloud."
+        ],
+        "stat": {
+          "lead": "Plus de",
+          "value": "50",
+          "label": "déploiements réseau et serveurs"
+        },
+        "certifications": [
+          "Microsoft Azure",
+          "Cisco CCNA",
+          "ITIL 4 Foundation",
+          "ITIL 4 Practitioner Service Configuration Management"
+        ]
+      },
+      {
+        "lead": "Nous protégeons vos réseaux, votre infrastructure et vos données, et aidons votre organisation à intégrer la sécurité dans son fonctionnement.",
+        "services": [
+          {
+            "name": "Sécurité réseau",
+            "text": "Des pare-feu et des contrôles réseau qui gèrent ce qui peut atteindre vos systèmes.",
+            "icon": "networkSecurity"
+          },
+          {
+            "name": "Protection des infrastructures",
+            "text": "La protection des serveurs et des systèmes dont vos opérations dépendent.",
+            "icon": "infrastructureProtection"
+          },
+          {
+            "name": "Conseil en cybersécurité",
+            "text": "Une revue de vos risques, avec des priorités claires sur ce qu’il faut corriger.",
+            "icon": "consulting"
+          },
+          {
+            "name": "Solutions de sécurité et produits SaaS",
+            "text": "Des outils et des services de sécurité adaptés à votre environnement.",
+            "icon": "securitySaas"
+          },
+          {
+            "name": "Architecture de sécurité informatique",
+            "text": "Une sécurité intégrée dès le départ à vos systèmes et à vos réseaux.",
+            "icon": "securityArchitecture"
+          }
+        ],
+        "needs": [
+          "Vous n’avez pas de vision claire de vos risques de sécurité.",
+          "Vous ajoutez des accès à distance, des services cloud ou de nouveaux sites.",
+          "Vos équipes ont besoin de règles de sécurité claires."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": [
+          "Fortinet"
+        ]
+      },
+      {
+        "lead": "Nous créons des identités visuelles et des supports de communication, et transférons vos documents vers des systèmes en ligne faciles à consulter.",
+        "services": [
+          {
+            "name": "Design graphique",
+            "text": "Des visuels pour l’impression, les écrans et les présentations.",
+            "icon": "graphicDesign"
+          },
+          {
+            "name": "Identité de marque",
+            "text": "Des logos, des couleurs et des règles qui donnent à votre organisation une image cohérente.",
+            "icon": "brandIdentity"
+          },
+          {
+            "name": "Communication visuelle",
+            "text": "Des supports qui rendent une information complexe facile à comprendre.",
+            "icon": "visualCommunication"
+          },
+          {
+            "name": "Archivage documentaire en ligne",
+            "text": "Vos documents stockés en ligne, organisés et faciles à retrouver.",
+            "icon": "archive"
+          },
+          {
+            "name": "Systèmes de gestion documentaire",
+            "text": "Des systèmes pour gérer les documents, les versions et les accès dans vos équipes.",
+            "icon": "documentManagement"
+          }
+        ],
+        "needs": [
+          "Votre organisation change d’image d’un document à l’autre.",
+          "Retrouver un dossier papier prend trop de temps.",
+          "Vos équipes travaillent sur différentes versions d’un même document."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": []
+      }
+    ]
+  },
+  "audiences": {
+    "title": "Pour les organisations de toutes tailles.",
+    "text": "D’un premier produit aux systèmes complexes des grandes organisations, nous adaptons le travail à votre taille et à votre niveau de complexité.",
+    "action": "Parlez-nous de votre organisation",
+    "items": [
+      {
+        "kind": "startups",
+        "name": "Startups et entrepreneurs",
+        "text": "Sites web, applications et produits SaaS, de la première version à la croissance."
+      },
+      {
+        "kind": "smb",
+        "name": "Petites et moyennes entreprises",
+        "text": "Logiciels sur mesure, automatisation et infrastructure informatique pour les équipes qui veulent mieux travailler."
+      },
+      {
+        "kind": "enterprise",
+        "name": "Grandes entreprises et multinationales",
+        "text": "Automatisation des processus, données et cybersécurité, intégrées aux systèmes déjà en place."
+      },
+      {
+        "kind": "government",
+        "name": "Institutions gouvernementales",
+        "text": "Sécurité réseau, gestion des systèmes informatiques et archivage documentaire en ligne."
+      },
+      {
+        "kind": "ngo",
+        "name": "ONG et organisations internationales",
+        "text": "Tableaux de bord, rapports et gestion documentaire pour informer les équipes et les partenaires."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projets sélectionnés",
+    "text": "Des systèmes utilisés au quotidien, présentés par ce qu’ils ont changé.",
+    "link": "Voir tous les projets",
+    "items": [
+      {
+        "kind": "visa",
+        "name": "Portail de visa en ligne",
+        "category": "Automatisation des processus",
+        "client": "Entreprise pétrolière et gazière",
+        "text": "Le processus manuel d’une équipe visa, remplacé par un portail unique où tout se gère.",
+        "need": "L’équipe visa gérait son processus à la main.",
+        "built": "Un portail en ligne où tout le processus de visa est géré.",
+        "result": "Le processus manuel a été supprimé, et tout se gère désormais depuis un seul endroit.",
+        "divisions": [
+          1,
+          0
+        ]
+      },
+      {
+        "kind": "hr",
+        "name": "Logiciel de gestion RH",
+        "category": "Logiciel sur mesure",
+        "client": "",
+        "text": "Un logiciel sur mesure conçu autour des processus RH d’un client.",
+        "need": "",
+        "built": "Un logiciel sur mesure conçu autour des processus RH du client.",
+        "result": "",
+        "divisions": [
+          0
+        ]
+      },
+      {
+        "kind": "expat",
+        "name": "Système de gestion de l’expatriation",
+        "category": "Expatriation",
+        "client": "",
+        "text": "Un système pour gérer l’expatriation des employés.",
+        "need": "",
+        "built": "Un système pour gérer l’expatriation des employés.",
+        "result": "",
+        "divisions": [
+          0
+        ]
+      }
+    ],
+    "page": {
+      "title": "Des systèmes conçus autour du travail de nos clients.",
+      "text": "Une sélection de projets, chacun réalisé pour un client différent.",
+      "description": "Une sélection de projets Diframe : un portail de visa en ligne, un logiciel de gestion RH et un système de gestion de l’expatriation.",
+      "need": "Le besoin",
+      "built": "Ce que nous avons réalisé",
+      "result": "Le résultat",
+      "related": "Division associée"
+    }
+  },
+  "showcase": {
+    "title": "Nos réalisations",
+    "text": "Les interfaces, visuels et documents que nous avons conçus.",
+    "link": "Voir les réalisations",
+    "items": [
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Écran d’interface",
+        "type": "interfaces",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Écran mobile",
+        "type": "interfaces",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Visuel",
+        "type": "graphics",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Détail de tableau de bord",
+        "type": "interfaces",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Pièce de marque",
+        "type": "brand",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Document",
+        "type": "brand",
+        "caption": ""
+      }
+    ],
+    "page": {
+      "title": "Un travail à voir.",
+      "text": "Les interfaces, visuels et documents que nous avons conçus.",
+      "description": "Une galerie des interfaces, visuels et documents conçus par Diframe.",
+      "pending": "Nous préparons cette galerie. Les premières pièces apparaîtront bientôt ici.",
+      "filterLabel": "Filtrer par type",
+      "all": "Tout",
+      "types": {
+        "interfaces": "Interfaces",
+        "graphics": "Visuels",
+        "brand": "Marque et documents"
+      },
+      "open": "Voir",
+      "close": "Fermer",
+      "previous": "Précédent",
+      "next": "Suivant"
+    }
+  },
+  "expertise": {
+    "title": "Les certifications de notre équipe incluent",
+    "items": [
+      "Microsoft Azure",
+      "Cisco CCNA",
+      "Fortinet",
+      "Microsoft Power BI Data Analyst (PL-300)",
+      "ITIL 4 Foundation",
+      "ITIL 4 Practitioner Service Configuration Management"
+    ],
+    "more": "Ainsi que d’autres certifications reconnues à l’international."
+  },
+  "company": {
+    "title": "L’ingénierie de la transformation numérique.",
+    "text": "Donner aux entreprises les moyens d’agir grâce à la technologie, à l’intelligence et à l’innovation.",
+    "description": "Diframe est une entreprise de transformation numérique et de technologie, en activité depuis 2021, avec une équipe pluridisciplinaire et des certifications reconnues à l’international.",
+    "sinceLabel": "En activité depuis",
+    "sinceValue": "2021"
+  },
+  "process": {
+    "title": "Notre méthode",
+    "steps": [
+      {
+        "name": "Écouter",
+        "text": "Nous partons de vos objectifs, de vos contraintes et des systèmes déjà en place."
+      },
+      {
+        "name": "Proposer",
+        "text": "Un plan clair : périmètre, calendrier et budget."
+      },
+      {
+        "name": "Réaliser",
+        "text": "Une livraison par étapes, validée avec vous à chacune d’elles."
+      },
+      {
+        "name": "Accompagner",
+        "text": "Formation, maintenance et évolutions après la mise en service."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Un projet en tête ?",
+    "text": "Parlez-nous de votre besoin.",
+    "action": "Demander une consultation",
+    "reply": "Nous répondons sous 1 jour ouvré."
+  },
+  "footer": {
+    "tagline": "Des solutions numériques intelligentes pour les organisations qui veulent mieux fonctionner.",
+    "explore": "Explorer",
+    "solutions": "Solutions",
+    "privacy": "Confidentialité"
+  },
+  "pages": {
+    "solutions": "Solutions",
+    "projects": "Projets",
+    "showcase": "Réalisations",
+    "company": "Entreprise",
+    "contact": "Contact",
+    "privacy": "Confidentialité"
+  },
+  "contact": {
+    "title": "Demander une consultation",
+    "text": "Dites-nous ce que vous cherchez à résoudre. Nous lisons votre demande et vous répondons avec une prochaine étape claire.",
+    "email": "contact@diframe.studio",
+    "description": "Demandez une consultation à Diframe. Parlez-nous de votre besoin : nous répondons sous 1 jour ouvré.",
+    "form": {
+      "name": "Votre nom",
+      "email": "E-mail professionnel",
+      "organization": "Organisation (facultatif)",
+      "topic": "Quel est le sujet ?",
+      "unsure": "Je ne sais pas encore",
+      "message": "De quoi avez-vous besoin ?",
+      "messageHint": "Ce que vous cherchez à résoudre, et votre échéance s’il y en a une. Quelques lignes suffisent.",
+      "honeypot": "Laissez ce champ vide",
+      "notice": "Nous utilisons ces informations uniquement pour vous répondre.",
+      "noticeLink": "Lire notre politique de confidentialité",
+      "sending": "Envoi de votre demande…",
+      "sentTitle": "Nous avons bien reçu votre demande.",
+      "sentText": "Nous répondrons à {email} sous 1 jour ouvré.",
+      "sentLink": "Voir nos projets",
+      "tooFast": "Le formulaire a été envoyé trop vite pour notre contrôle anti-spam. Sélectionnez à nouveau « Demander une consultation ».",
+      "rateLimited": "Trop de demandes proviennent de cette connexion. Votre texte est conservé : attendez 10 minutes, puis renvoyez-le.",
+      "failed": "Votre demande n’a pas été envoyée. Votre texte est conservé : réessayez dans quelques minutes ou écrivez-nous à {email}.",
+      "errors": {
+        "name": {
+          "required": "Saisissez votre nom.",
+          "tooLong": "Raccourcissez votre nom à 120 caractères maximum."
+        },
+        "email": {
+          "required": "Saisissez votre adresse e-mail.",
+          "invalidEmail": "Saisissez une adresse e-mail complète, par exemple nom@entreprise.com.",
+          "tooLong": "Raccourcissez votre adresse e-mail à 254 caractères maximum."
+        },
+        "organization": {
+          "tooLong": "Raccourcissez le nom de l’organisation à 160 caractères maximum."
+        },
+        "message": {
+          "required": "Décrivez brièvement votre besoin.",
+          "tooShort": "Ajoutez quelques détails, au moins 10 caractères.",
+          "tooLong": "Raccourcissez votre message à 5 000 caractères maximum."
+        }
+      }
+    }
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "text": "Ce que ce site collecte, pourquoi, et les choix dont vous disposez.",
+    "description": "Comment le site de Diframe traite les informations envoyées par le formulaire de contact.",
+    "updated": "Dernière mise à jour : 5 novembre 2026",
+    "sections": [
+      {
+        "title": "Ce que vous nous envoyez",
+        "paragraphs": [
+          "Lorsque vous utilisez le formulaire de contact, nous recevons votre nom, votre adresse e-mail, votre organisation si vous l’indiquez, le sujet choisi et votre message."
+        ]
+      },
+      {
+        "title": "Comment nous les utilisons",
+        "paragraphs": [
+          "Nous utilisons ces informations pour répondre à votre demande et pour échanger sur le travail qui pourrait en découler. Nous ne les vendons pas et ne les utilisons pas à des fins publicitaires."
+        ]
+      },
+      {
+        "title": "Qui les traite",
+        "paragraphs": [
+          "Votre demande nous parvient par e-mail, via un prestataire d’envoi d’e-mails. Notre hébergeur fait fonctionner ce site et peut conserver des journaux techniques, comme des adresses IP. Ces prestataires peuvent traiter des données hors de votre pays."
+        ]
+      },
+      {
+        "title": "Protection contre le spam",
+        "paragraphs": [
+          "Pour limiter les messages automatisés, nous vérifions l’adresse IP de votre connexion lors de l’envoi du formulaire. Elle reste uniquement en mémoire temporaire et n’est pas enregistrée avec votre demande."
+        ]
+      },
+      {
+        "title": "Cookies et stockage du navigateur",
+        "paragraphs": [
+          "Nous enregistrons votre choix de langue dans un cookie, pendant un an au maximum, et votre choix de thème dans votre navigateur. Ils servent uniquement à conserver vos réglages. Ce site n’utilise aucun cookie de mesure d’audience ou de publicité."
+        ]
+      },
+      {
+        "title": "Durée de conservation",
+        "paragraphs": [
+          "Nous conservons votre demande le temps nécessaire pour vous répondre et assurer le suivi de nos échanges, puis nous la supprimons, sauf obligation légale de la conserver."
+        ]
+      },
+      {
+        "title": "Vos choix",
+        "paragraphs": [
+          "Vous pouvez nous demander de consulter, de corriger ou de supprimer les informations que nous détenons à votre sujet. Envoyez votre demande par le formulaire de contact et nous vous répondrons. Selon votre lieu de résidence, vous pouvez aussi saisir votre autorité de protection des données."
+        ]
+      }
+    ]
+  }
+}

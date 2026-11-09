@@ -1,0 +1,689 @@
+{
+  "meta": {
+    "siteName": "Diframe",
+    "homeTitle": "Diframe | Engineering Digital Transformation",
+    "description": "Diframe helps organizations modernize through software engineering, AI and automation, data, IT infrastructure and cybersecurity.",
+    "shareAlt": "The Diframe logo on a dark background lit with blue and purple light, above the address diframe.studio."
+  },
+  "a11y": {
+    "skip": "Skip to main content",
+    "mainNav": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToDark": "Switch to dark theme",
+    "switchToLight": "Switch to light theme",
+    "language": "Language",
+    "home": "Diframe home",
+    "divisionLinks": "Our six divisions"
+  },
+  "nav": {
+    "solutions": "Solutions",
+    "projects": "Projects",
+    "showcase": "Showcase",
+    "company": "Company",
+    "contact": "Let’s talk"
+  },
+  "hero": {
+    "title": "Engineering the Future of Business.",
+    "text": "We build intelligent digital solutions that transform the way businesses operate, connect and grow.",
+    "primary": "Explore Our Solutions",
+    "secondary": "Let’s Talk"
+  },
+  "about": {
+    "label": "About Diframe",
+    "statement": "Diframe is a digital transformation and technology company. We design, build and secure the software, data and infrastructure that organizations rely on every day, from startups to multinationals, governments and NGOs.",
+    "text": "Software engineering, AI and automation, data, IT infrastructure, cybersecurity and digital design sit under one team, so you have one partner from the first plan to long-term support.",
+    "link": "Learn more about us"
+  },
+  "proof": {
+    "title": "Trusted by organizations across sectors since 2021.",
+    "stats": [
+      {
+        "lead": "",
+        "value": "20+",
+        "label": "clients"
+      },
+      {
+        "lead": "",
+        "value": "50+",
+        "label": "network and server deployments"
+      },
+      {
+        "lead": "",
+        "value": "1,000+",
+        "label": "users on our SaaS"
+      }
+    ],
+    "clientsLabel": "Clients we’ve worked with",
+    "clients": [
+      "SLB",
+      "Aker Solutions",
+      "OneSubsea",
+      "La Cité des Grands Lacs",
+      "Lamba Foundation",
+      "Supersonic",
+      "Infinitech Congo"
+    ]
+  },
+  "divisions": {
+    "title": "Six areas of expertise. One accountable partner.",
+    "items": [
+      {
+        "name": "Digital Solutions & Software Engineering",
+        "short": "Software",
+        "text": "Web platforms, business applications and portals built to last."
+      },
+      {
+        "name": "AI & Intelligent Automation",
+        "short": "AI & Automation",
+        "text": "Automate repetitive work with AI that fits the way you already operate."
+      },
+      {
+        "name": "Data & Business Intelligence",
+        "short": "Data & BI",
+        "text": "Dashboards and reports that turn scattered data into decisions."
+      },
+      {
+        "name": "IT Infrastructure & Cloud",
+        "short": "Infrastructure & Cloud",
+        "text": "Networks, servers and cloud environments, designed, deployed and maintained."
+      },
+      {
+        "name": "Cybersecurity & Digital Trust",
+        "short": "Cybersecurity",
+        "text": "Protection for your systems, data and people, from firewalls to security policy."
+      },
+      {
+        "name": "Digital Design & Document Management",
+        "short": "Design & Documents",
+        "text": "Graphic design, brand identity and online document archiving."
+      }
+    ],
+    "explore": "Explore this division"
+  },
+  "solutions": {
+    "overview": {
+      "title": "Six divisions, working as one team.",
+      "text": "Software, AI, data, infrastructure, security and design under one roof, so the systems you depend on are planned as a whole.",
+      "description": "Diframe’s six divisions: software engineering, AI and automation, data, IT infrastructure and cloud, cybersecurity, and digital design and document management.",
+      "primary": "See the six divisions",
+      "listTitle": "What each division does",
+      "closingTitle": "Not sure where to start?",
+      "closingText": "Tell us what you’re trying to solve, and we’ll point you to the right team."
+    },
+    "labels": {
+      "breadcrumb": "Breadcrumb",
+      "seeServices": "See our services",
+      "services": "What this division does",
+      "needs": "When to call us",
+      "certifications": "Our team’s certifications in this area include",
+      "others": "Other divisions",
+      "relatedProjects": "Related projects"
+    },
+    "items": [
+      {
+        "lead": "We design and build websites, business applications and SaaS products around the way your organization works.",
+        "services": [
+          {
+            "name": "Corporate website development",
+            "text": "Fast, accessible websites that present your organization clearly.",
+            "icon": "website"
+          },
+          {
+            "name": "Custom software development",
+            "text": "Software built around your own processes, when off-the-shelf tools don’t fit.",
+            "icon": "customSoftware"
+          },
+          {
+            "name": "Web and mobile application development",
+            "text": "Applications for your teams and customers, on the web and on phones.",
+            "icon": "webMobile"
+          },
+          {
+            "name": "SaaS product development",
+            "text": "Subscription software, from the first version to a product with many users.",
+            "icon": "saas"
+          },
+          {
+            "name": "Custom domain name solutions",
+            "text": "Domain names chosen, registered and configured for your organization and its services.",
+            "icon": "domain"
+          }
+        ],
+        "needs": [
+          "Important work still runs on spreadsheets and email.",
+          "Off-the-shelf software doesn’t match how your team works.",
+          "You have a product idea and need a team to build it."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "1,000+",
+          "label": "users on our SaaS"
+        },
+        "certifications": []
+      },
+      {
+        "lead": "We automate repetitive work and connect AI to your daily operations, so your people can focus on the decisions that need them.",
+        "services": [
+          {
+            "name": "AI agent development",
+            "text": "Agents that carry out defined tasks using your documents, tools and rules.",
+            "icon": "aiAgent"
+          },
+          {
+            "name": "Agentic AI solutions",
+            "text": "Systems of agents that plan and complete multi-step work, with people in control of key decisions.",
+            "icon": "agentic"
+          },
+          {
+            "name": "Business process automation",
+            "text": "Manual steps replaced with automated ones, from requests to approvals.",
+            "icon": "processAutomation"
+          },
+          {
+            "name": "Intelligent workflow automation",
+            "text": "Workflows that route, check and update information across your tools.",
+            "icon": "workflow"
+          },
+          {
+            "name": "AI integration into business operations",
+            "text": "AI connected to the systems your teams already use.",
+            "icon": "aiIntegration"
+          }
+        ],
+        "needs": [
+          "Your team repeats the same manual steps every day.",
+          "Requests get stuck waiting for someone to pass them on.",
+          "You want to use AI but don’t know where it would help."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": []
+      },
+      {
+        "lead": "We bring scattered data together and turn it into dashboards and reports your teams can act on.",
+        "services": [
+          {
+            "name": "Data analytics",
+            "text": "Analysis of your data to answer specific business questions.",
+            "icon": "analytics"
+          },
+          {
+            "name": "Microsoft Power BI solutions",
+            "text": "Power BI reports and models, set up for your data and your teams.",
+            "icon": "powerBi"
+          },
+          {
+            "name": "Interactive dashboards",
+            "text": "Live views of your key figures that people can filter and explore.",
+            "icon": "dashboards"
+          },
+          {
+            "name": "Business reporting",
+            "text": "Regular reports that replace manual compilation.",
+            "icon": "reporting"
+          },
+          {
+            "name": "Data-driven decision support",
+            "text": "Clear figures and comparisons to support decisions at each level.",
+            "icon": "decision"
+          }
+        ],
+        "needs": [
+          "Your figures live in separate files and systems.",
+          "Preparing a report takes days of manual work.",
+          "Different teams give different numbers for the same thing."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": [
+          "Microsoft Power BI Data Analyst (PL-300)"
+        ]
+      },
+      {
+        "lead": "We design, deploy and manage the networks, servers and cloud environments your organization depends on.",
+        "services": [
+          {
+            "name": "IT infrastructure design",
+            "text": "An infrastructure plan based on your sites, your users and your growth.",
+            "icon": "infrastructureDesign"
+          },
+          {
+            "name": "Server configuration and administration",
+            "text": "Servers installed, configured and kept up to date.",
+            "icon": "server"
+          },
+          {
+            "name": "Network architecture and deployment",
+            "text": "Networks designed and installed for your offices and sites.",
+            "icon": "networkArchitecture"
+          },
+          {
+            "name": "Cloud infrastructure",
+            "text": "Cloud environments set up and organized for your workloads.",
+            "icon": "cloud"
+          },
+          {
+            "name": "IT systems management",
+            "text": "Ongoing management of your systems, so issues are handled early.",
+            "icon": "systemsManagement"
+          }
+        ],
+        "needs": [
+          "You’re opening a new site and need a network.",
+          "Your servers or network have grown without a clear plan.",
+          "You want to move some of your systems to the cloud."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "50+",
+          "label": "network and server deployments"
+        },
+        "certifications": [
+          "Microsoft Azure",
+          "Cisco CCNA",
+          "ITIL 4 Foundation",
+          "ITIL 4 Practitioner Service Configuration Management"
+        ]
+      },
+      {
+        "lead": "We protect your networks, infrastructure and data, and help your organization build security into how it works.",
+        "services": [
+          {
+            "name": "Network security",
+            "text": "Firewalls and network controls that manage what can reach your systems.",
+            "icon": "networkSecurity"
+          },
+          {
+            "name": "Infrastructure protection",
+            "text": "Protection for the servers and systems your operations rely on.",
+            "icon": "infrastructureProtection"
+          },
+          {
+            "name": "Cybersecurity consulting",
+            "text": "A review of your risks, with clear priorities on what to fix.",
+            "icon": "consulting"
+          },
+          {
+            "name": "Security solutions and SaaS products",
+            "text": "Security tools and services that fit your environment.",
+            "icon": "securitySaas"
+          },
+          {
+            "name": "IT security architecture",
+            "text": "Security designed into your systems and networks from the start.",
+            "icon": "securityArchitecture"
+          }
+        ],
+        "needs": [
+          "You don’t have a clear view of your security risks.",
+          "You’re adding remote access, cloud services or new sites.",
+          "Your teams need clear security rules to follow."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": [
+          "Fortinet"
+        ]
+      },
+      {
+        "lead": "We create visual identities and communication materials, and move your documents into online systems that are easy to search.",
+        "services": [
+          {
+            "name": "Graphic design",
+            "text": "Visuals for print, screens and presentations.",
+            "icon": "graphicDesign"
+          },
+          {
+            "name": "Brand identity",
+            "text": "Logos, colors and guidelines that give your organization a consistent look.",
+            "icon": "brandIdentity"
+          },
+          {
+            "name": "Visual communication",
+            "text": "Materials that make complex information easy to understand.",
+            "icon": "visualCommunication"
+          },
+          {
+            "name": "Online document archiving",
+            "text": "Your documents stored online, organized and easy to find.",
+            "icon": "archive"
+          },
+          {
+            "name": "Digital document management systems",
+            "text": "Systems to manage documents, versions and access across your teams.",
+            "icon": "documentManagement"
+          }
+        ],
+        "needs": [
+          "Your organization looks different from one document to the next.",
+          "Paper files take too long to find.",
+          "Teams keep working from different versions of a document."
+        ],
+        "stat": {
+          "lead": "",
+          "value": "",
+          "label": ""
+        },
+        "certifications": []
+      }
+    ]
+  },
+  "audiences": {
+    "title": "For organizations of every size.",
+    "text": "From a first product to complex systems in large organizations, we adapt the work to your size and level of complexity.",
+    "action": "Talk to us about your organization",
+    "items": [
+      {
+        "kind": "startups",
+        "name": "Startups and entrepreneurs",
+        "text": "Websites, applications and SaaS products, from a first version to growth."
+      },
+      {
+        "kind": "smb",
+        "name": "Small and medium-sized businesses",
+        "text": "Custom software, automation and IT infrastructure for teams that need to work better."
+      },
+      {
+        "kind": "enterprise",
+        "name": "Large companies and multinationals",
+        "text": "Process automation, data and cybersecurity, integrated with the systems you already run."
+      },
+      {
+        "kind": "government",
+        "name": "Government institutions",
+        "text": "Network security, IT systems management and online document archiving."
+      },
+      {
+        "kind": "ngo",
+        "name": "NGOs and international organizations",
+        "text": "Dashboards, reporting and document management that keep teams and partners informed."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Selected projects",
+    "text": "Systems in daily use, told by what they changed.",
+    "link": "View all projects",
+    "items": [
+      {
+        "kind": "visa",
+        "name": "Online visa portal",
+        "category": "Process automation",
+        "client": "Oil and gas company",
+        "text": "A visa team’s manual process, replaced by one portal where everything is managed.",
+        "need": "The visa team ran its process by hand.",
+        "built": "An online portal where the whole visa process is managed.",
+        "result": "The manual process was removed, and everything is now managed from one place.",
+        "divisions": [
+          1,
+          0
+        ]
+      },
+      {
+        "kind": "hr",
+        "name": "HR management software",
+        "category": "Custom software",
+        "client": "",
+        "text": "Custom software built around one client’s HR processes.",
+        "need": "",
+        "built": "Custom software built around the client’s HR processes.",
+        "result": "",
+        "divisions": [
+          0
+        ]
+      },
+      {
+        "kind": "expat",
+        "name": "Expatriation management system",
+        "category": "Expatriation",
+        "client": "",
+        "text": "A system for managing employee expatriation.",
+        "need": "",
+        "built": "A system for managing employee expatriation.",
+        "result": "",
+        "divisions": [
+          0
+        ]
+      }
+    ],
+    "page": {
+      "title": "Systems built around how our clients work.",
+      "text": "A selection of projects, each built for a different client.",
+      "description": "A selection of Diframe projects: an online visa portal, HR management software and an expatriation management system.",
+      "need": "The need",
+      "built": "What we built",
+      "result": "The result",
+      "related": "Related division"
+    }
+  },
+  "showcase": {
+    "title": "From the showcase",
+    "text": "Interfaces, graphics and documents we’ve designed.",
+    "link": "View the showcase",
+    "items": [
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Interface screen",
+        "type": "interfaces",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Mobile screen",
+        "type": "interfaces",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Graphic",
+        "type": "graphics",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Dashboard detail",
+        "type": "interfaces",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Brand piece",
+        "type": "brand",
+        "caption": ""
+      },
+      {
+        "image": "",
+        "alt": "",
+        "placeholder": "Document",
+        "type": "brand",
+        "caption": ""
+      }
+    ],
+    "page": {
+      "title": "Work you can see.",
+      "text": "Interfaces, graphics and documents we’ve designed.",
+      "description": "A gallery of the interfaces, graphics and documents designed by Diframe.",
+      "pending": "We’re preparing this gallery. The first pieces will appear here soon.",
+      "filterLabel": "Filter by type",
+      "all": "All",
+      "types": {
+        "interfaces": "Interfaces",
+        "graphics": "Graphics",
+        "brand": "Brand and documents"
+      },
+      "open": "View",
+      "close": "Close",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "expertise": {
+    "title": "Our team’s certifications include",
+    "items": [
+      "Microsoft Azure",
+      "Cisco CCNA",
+      "Fortinet",
+      "Microsoft Power BI Data Analyst (PL-300)",
+      "ITIL 4 Foundation",
+      "ITIL 4 Practitioner Service Configuration Management"
+    ],
+    "more": "And other internationally recognized certifications."
+  },
+  "company": {
+    "title": "Engineering digital transformation.",
+    "text": "Empowering businesses through technology, intelligence and innovation.",
+    "description": "Diframe is a digital transformation and technology company, active since 2021, with a multidisciplinary team and internationally recognized certifications.",
+    "sinceLabel": "Active since",
+    "sinceValue": "2021"
+  },
+  "process": {
+    "title": "How we work",
+    "steps": [
+      {
+        "name": "Listen",
+        "text": "We start from your goals, your constraints and the systems you already have."
+      },
+      {
+        "name": "Propose",
+        "text": "A clear plan with scope, timeline and cost."
+      },
+      {
+        "name": "Build",
+        "text": "Delivered in stages, with your review at each one."
+      },
+      {
+        "name": "Support",
+        "text": "Training, maintenance and improvements after launch."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Have a project in mind?",
+    "text": "Tell us what you need.",
+    "action": "Request a consultation",
+    "reply": "We reply within 1 business day."
+  },
+  "footer": {
+    "tagline": "Intelligent digital solutions for organizations that need to work better.",
+    "explore": "Explore",
+    "solutions": "Solutions",
+    "privacy": "Privacy notice"
+  },
+  "pages": {
+    "solutions": "Solutions",
+    "projects": "Projects",
+    "showcase": "Showcase",
+    "company": "Company",
+    "contact": "Contact",
+    "privacy": "Privacy notice"
+  },
+  "contact": {
+    "title": "Request a consultation",
+    "text": "Tell us what you’re trying to solve. We’ll read it and reply with a clear next step.",
+    "email": "contact@diframe.studio",
+    "description": "Request a consultation with Diframe. Tell us what you need, and we reply within 1 business day.",
+    "form": {
+      "name": "Your name",
+      "email": "Work email",
+      "organization": "Organization (optional)",
+      "topic": "What is this about?",
+      "unsure": "Not sure yet",
+      "message": "What do you need?",
+      "messageHint": "What you’re trying to solve, and any deadline. A few lines is enough.",
+      "honeypot": "Leave this field empty",
+      "notice": "We use these details only to reply to you.",
+      "noticeLink": "Read our privacy notice",
+      "sending": "Sending your request…",
+      "sentTitle": "We’ve received your request.",
+      "sentText": "We’ll reply to {email} within 1 business day.",
+      "sentLink": "See our projects",
+      "tooFast": "The form was sent too quickly for our spam check. Select “Request a consultation” again.",
+      "rateLimited": "Too many requests came from this connection. Your text is still here, so wait 10 minutes and send it again.",
+      "failed": "Your request wasn’t sent. Your text is still here, so try again in a few minutes or email us at {email}.",
+      "errors": {
+        "name": {
+          "required": "Enter your name.",
+          "tooLong": "Shorten your name to 120 characters or fewer."
+        },
+        "email": {
+          "required": "Enter your email address.",
+          "invalidEmail": "Enter a complete email address, such as name@company.com.",
+          "tooLong": "Shorten your email address to 254 characters or fewer."
+        },
+        "organization": {
+          "tooLong": "Shorten the organization name to 160 characters or fewer."
+        },
+        "message": {
+          "required": "Tell us briefly what you need.",
+          "tooShort": "Add a little more detail, at least 10 characters.",
+          "tooLong": "Shorten your message to 5,000 characters or fewer."
+        }
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy notice",
+    "text": "What this website collects, why, and the choices you have.",
+    "description": "How the Diframe website handles the information you send through the contact form.",
+    "updated": "Last updated: November 5, 2026",
+    "sections": [
+      {
+        "title": "What you send us",
+        "paragraphs": [
+          "When you use the contact form, we receive your name, your email address, your organization if you give it, the topic you select and your message."
+        ]
+      },
+      {
+        "title": "How we use it",
+        "paragraphs": [
+          "We use this information to reply to your request and to discuss any work that follows from it. We don’t sell it, and we don’t use it for advertising."
+        ]
+      },
+      {
+        "title": "Who handles it",
+        "paragraphs": [
+          "Your request reaches us by email, through an email delivery provider. Our hosting provider runs this website and may keep technical logs, such as IP addresses. These providers may process data outside your country."
+        ]
+      },
+      {
+        "title": "Spam protection",
+        "paragraphs": [
+          "To limit automated messages, we check your connection’s IP address when you send the form. We keep it only in temporary memory and don’t store it with your request."
+        ]
+      },
+      {
+        "title": "Cookies and browser storage",
+        "paragraphs": [
+          "We save your language choice in a cookie, for up to one year, and your theme choice in your browser. Both only keep the site the way you set it. This website doesn’t use analytics or advertising cookies."
+        ]
+      },
+      {
+        "title": "How long we keep it",
+        "paragraphs": [
+          "We keep your request for as long as we need it to answer you and follow up on the discussion, then delete it unless we must keep it by law."
+        ]
+      },
+      {
+        "title": "Your choices",
+        "paragraphs": [
+          "You can ask us to show you, correct or delete the information we hold about you. Send your request through the contact form and we’ll reply. Depending on where you live, you may also be able to complain to your data protection authority."
+        ]
+      }
+    ]
+  }
+}

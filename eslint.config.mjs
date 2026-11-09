@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Design tooling scripts, not part of the website.
+    ".claude/**",
   ]),
 ]);
 
