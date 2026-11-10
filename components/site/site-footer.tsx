@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/site/logo";
+import { ParticleField } from "@/components/site/particle-field";
 import type { Dictionary } from "@/content";
 import { divisionPath, pagePath, type Locale, type PageKey } from "@/lib/i18n/routes";
 
@@ -10,7 +11,8 @@ export function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const linkClass = "inline-flex min-h-11 items-center text-[0.9375rem] text-muted-foreground transition-colors hover:text-fg sm:min-h-9";
 
   return (
-    <footer data-surface="dark" className="border-t border-line pb-8 pt-16 md:pt-24">
+    <footer data-surface="dark" className="relative isolate overflow-hidden border-t border-line pb-8 pt-16 md:pt-24">
+      <ParticleField />
       <div className="wrap">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.6fr)_minmax(0,1fr)] lg:gap-16">
           <div className="max-w-sm">

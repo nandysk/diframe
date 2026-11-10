@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Closing } from "@/components/home/closing";
 import { ProjectDiagram } from "@/components/home/project-diagram";
 import { GlassStage, order } from "@/components/site/motion";
+import { ParticleField } from "@/components/site/particle-field";
 import { PageHero } from "@/components/site/page-hero";
 import { Badge, badgeVariants } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -19,6 +20,7 @@ export function ProjectsPage({ lang, dict }: { lang: Locale; dict: Dictionary })
 
       <section data-surface="dark" className="relative isolate overflow-hidden pb-[clamp(72px,10vw,152px)]">
         <GlassStage variant="wide" />
+        <ParticleField />
         <div className="wrap grid gap-5">
           {projects.items.map((project, index) => {
             const steps = [

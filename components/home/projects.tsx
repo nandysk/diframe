@@ -2,6 +2,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { ProjectDiagram } from "@/components/home/project-diagram";
 import { GlassStage, RevealText, order } from "@/components/site/motion";
+import { ParticleField } from "@/components/site/particle-field";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -16,6 +17,7 @@ export function Projects({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <section data-surface="dark" className="section relative isolate overflow-hidden">
       <GlassStage variant="wide" />
+      <ParticleField />
       <div className="wrap">
         <div className="grid gap-5 lg:grid-cols-2 lg:items-end lg:gap-16">
           <RevealText text={projects.title} className="type-section" />

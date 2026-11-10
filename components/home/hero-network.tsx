@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { IsoScene } from "@/components/solutions/iso-scenes";
+import { isLowPower } from "@/lib/low-power";
 
 // A network globe with the six division illustrations circling it, and faint data
 // points drifting in from the open space. At rest everything is white and gray.
@@ -48,18 +49,6 @@ const project = ([x, y, z]: Vec, f: Frame): Vec => {
 };
 // The shortest turn from one angle to another, between -π and π.
 const turn = (from: number, to: number) => ((((to - from) % TAU) + TAU * 1.5) % TAU) - Math.PI;
-
-function isLowPower() {
-  const nav = navigator as Navigator & {
-    deviceMemory?: number;
-    connection?: { saveData?: boolean };
-  };
-  return (
-    nav.connection?.saveData === true ||
-    (nav.hardwareConcurrency !== undefined && nav.hardwareConcurrency <= 2) ||
-    (nav.deviceMemory !== undefined && nav.deviceMemory <= 2)
-  );
-}
 
 // Points spread evenly over a sphere, each linked to its nearest neighbours.
 function buildGlobe(count: number) {

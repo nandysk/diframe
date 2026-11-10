@@ -1,6 +1,7 @@
 import { ClockIcon } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { GlassStage, RevealText } from "@/components/site/motion";
+import { ParticleField } from "@/components/site/particle-field";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { Dictionary } from "@/content";
@@ -22,6 +23,7 @@ export function Closing({
   return (
     <section data-surface="dark" className="relative isolate overflow-hidden py-[clamp(72px,10vw,152px)]">
       <GlassStage />
+      <ParticleField />
       <div className="wrap">
         <Card
           variant="glass"

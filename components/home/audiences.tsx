@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AudienceScene } from "@/components/home/audience-scenes";
 import { GlassStage, RevealText, order } from "@/components/site/motion";
+import { ParticleField } from "@/components/site/particle-field";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { Dictionary } from "@/content";
@@ -13,6 +14,7 @@ export function Audiences({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <section id="who-we-serve" data-surface="dark" className="section relative isolate overflow-hidden">
       <GlassStage variant="wide" />
+      <ParticleField />
       <div className="wrap">
         <div className="grid gap-5 lg:grid-cols-2 lg:items-end lg:gap-16">
           <RevealText text={audiences.title} className="type-section max-w-[16ch]" />
