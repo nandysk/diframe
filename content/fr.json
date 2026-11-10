@@ -595,7 +595,7 @@
   "contact": {
     "title": "Demander une consultation",
     "text": "Dites-nous ce que vous cherchez à résoudre. Nous lisons votre demande et vous répondons avec une prochaine étape claire.",
-    "email": "contact@diframe.studio",
+    "email": "nandy@diframe.studio",
     "description": "Demandez une consultation à Diframe. Parlez-nous de votre besoin : nous répondons sous 1 jour ouvré.",
     "form": {
       "name": "Votre nom",

@@ -46,7 +46,7 @@ Copy `.env.example` to `.env.local` for local work. Set the same values in Verce
 | Name | What it's for |
 |---|---|
 | `RESEND_API_KEY` | Sends contact form requests. Create the key at resend.com. |
-| `CONTACT_TO_EMAIL` | The inbox that receives requests: `contact@diframe.studio` |
+| `CONTACT_TO_EMAIL` | The inbox that receives requests: `nandy@diframe.studio` |
 | `CONTACT_FROM_EMAIL` | The sender, on the domain verified with Resend: `Diframe Website <website@diframe.studio>` |
 | `NEXT_PUBLIC_SITE_URL` | Optional. Leave it empty to use `https://diframe.studio`. |
 
@@ -66,12 +66,12 @@ Resend's records sit on their own sub-names, so they don't affect your existing 
 2. Create a Vercel account. The site starts on the free Hobby plan. Vercel's terms limit Hobby to non-commercial use, so plan to move to Pro ($20/month). Your projects and settings carry over when you upgrade.
 3. Import the repository. Vercel detects Next.js; keep its default settings.
 4. Add the settings from the table above, then deploy.
-5. Open the `.vercel.app` address Vercel gives you, and send a test request through the contact form. It should arrive at `contact@diframe.studio`.
+5. Open the `.vercel.app` address Vercel gives you, and send a test request through the contact form. It should arrive at `nandy@diframe.studio`.
 
 ### 3. Domain
 1. In Vercel, open **Project → Settings → Domains**, and add `diframe.studio` and `www.diframe.studio`.
 2. Vercel shows the exact DNS records to set. Enter them in Hostinger, replacing the website records that point to Hostinger's own hosting (the `A` record for `@`, and `www`).
-3. **Keep the MX records unchanged**, or email to `contact@diframe.studio` will stop working.
+3. **Keep the MX records unchanged**, or email to `nandy@diframe.studio` will stop working.
 4. Wait until Vercel shows the domain as valid. HTTPS is set up automatically.
 
 ### 4. After launch
