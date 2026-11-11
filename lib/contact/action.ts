@@ -2,6 +2,7 @@
 
 import { headers } from "next/headers";
 import { sendContactEmail } from "@/lib/contact/send";
+import { passesTurnstile } from "@/lib/contact/turnstile";
 import { readValues, validate, type ContactState } from "@/lib/contact/validate";
 
 const MIN_ELAPSED_MS = 3_000;
@@ -39,6 +40,7 @@ export async function sendContact(_previous: ContactState, form: FormData): Prom
   const requestHeaders = await headers();
   const ip = requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim() || requestHeaders.get("x-real-ip") || "unknown";
   if (isRateLimited(ip)) return { status: "rateLimited", values };
+  if (!(await passesTurnstile(form.get("cf-turnstile-response"), ip))) return { status: "notVerified", values };
 
   const lang = form.get("lang") === "fr" ? "fr" : "en";
   const delivered = await sendContactEmail(values, lang);

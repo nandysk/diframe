@@ -1,8 +1,8 @@
 {
   "meta": {
     "siteName": "Diframe",
-    "homeTitle": "Diframe | Engineering Digital Transformation",
-    "description": "Diframe helps organizations modernize through software engineering, AI and automation, data, IT infrastructure and cybersecurity.",
+    "homeTitle": "Diframe | Software, AI, data, cloud and cybersecurity",
+    "description": "One team for software, AI, data, cloud, cybersecurity and design. We build what you need, improve what you already have, and support it long after launch.",
     "shareAlt": "The Diframe logo on a dark background lit with blue and purple light, above the address diframe.studio."
   },
   "a11y": {
@@ -545,11 +545,63 @@
     "more": "And other internationally recognized certifications."
   },
   "company": {
-    "title": "Engineering digital transformation.",
-    "text": "Empowering businesses through technology, intelligence and innovation.",
-    "description": "Diframe is a digital transformation and technology company, active since 2021, with a multidisciplinary team and internationally recognized certifications.",
+    "title": "One partner for the systems you rely on.",
+    "text": "Since 2021, we’ve built, improved and secured software, data and infrastructure for organizations of every size. Here is what we value, and what you can expect from us.",
+    "description": "Since 2021, Diframe has built, improved and secured systems for organizations of every size. What we value, and what you can expect when you work with us.",
     "sinceLabel": "Active since",
     "sinceValue": "2021"
+  },
+  "values": {
+    "label": "What we value",
+    "title": "What organizations look for in a technology partner, and how we answer it.",
+    "items": [
+      {
+        "name": "One accountable team",
+        "text": "Software, data, infrastructure and security sit with one team, so nothing falls between two suppliers and you always know who is responsible."
+      },
+      {
+        "name": "Your existing systems come first",
+        "text": "We build on what already works and replace only what holds you back, so your teams keep their habits and your past investments keep their value."
+      },
+      {
+        "name": "Clear plans, plain language",
+        "text": "Each proposal states what we’ll deliver, when, and at what cost, in words your whole team can follow."
+      },
+      {
+        "name": "Security from the start",
+        "text": "Access, backups and updates are planned into every project from day one, not added at the end."
+      },
+      {
+        "name": "Discretion with your data",
+        "text": "Your documents and data are treated as confidential, and used only for the work you asked us to do."
+      },
+      {
+        "name": "Here after launch",
+        "text": "We train your team, document what we deliver and stay available to maintain and improve it."
+      }
+    ]
+  },
+  "commitments": {
+    "title": "What you can expect",
+    "text": "Working with us follows the same few rules, whatever the size of the project.",
+    "items": [
+      {
+        "name": "A reply within 1 business day",
+        "text": "Every request gets an answer from a person, with a clear next step."
+      },
+      {
+        "name": "One contact from start to finish",
+        "text": "The same person follows your project, so you never have to explain it twice."
+      },
+      {
+        "name": "Progress you can see",
+        "text": "Work is delivered in stages, and you review each one before the next begins."
+      },
+      {
+        "name": "A proper handover",
+        "text": "You receive documentation and training, so your team can run what we built."
+      }
+    ]
   },
   "process": {
     "title": "How we work",
@@ -614,6 +666,7 @@
       "sentLink": "See our projects",
       "tooFast": "The form was sent too quickly for our spam check. Select “Request a consultation” again.",
       "rateLimited": "Too many requests came from this connection. Your text is still here, so wait 10 minutes and send it again.",
+      "notVerified": "We couldn’t confirm this request came from a person. Your text is still here, so complete the check above and send it again.",
       "failed": "Your request wasn’t sent. Your text is still here, so try again in a few minutes or email us at {email}.",
       "errors": {
         "name": {

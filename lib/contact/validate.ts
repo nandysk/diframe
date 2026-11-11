@@ -31,7 +31,7 @@ export type ContactState =
   | { status: "idle"; values?: ContactValues }
   | { status: "invalid"; values: ContactValues; errors: FieldErrors }
   | { status: "sent"; email: string }
-  | { status: "tooFast" | "rateLimited" | "failed"; values: ContactValues };
+  | { status: "tooFast" | "rateLimited" | "notVerified" | "failed"; values: ContactValues };
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

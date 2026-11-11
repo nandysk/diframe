@@ -8,6 +8,7 @@ import { Hero } from "@/components/home/hero";
 import { Process } from "@/components/home/process";
 import { Proof } from "@/components/home/proof";
 import { ShowcaseStrip } from "@/components/home/showcase-strip";
+import { OrganizationData } from "@/components/site/organization-data";
 import { getDictionary } from "@/content";
 import { isLocale } from "@/lib/i18n/routes";
 
@@ -18,6 +19,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
+      <OrganizationData lang={lang} dict={dict} />
       <Hero lang={lang} dict={dict} />
       <About lang={lang} dict={dict} />
       <Proof dict={dict} />

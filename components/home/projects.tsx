@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import { ProjectDiagram } from "@/components/home/project-diagram";
+import { ProjectScene } from "@/components/projects/project-scenes";
 import { GlassStage, RevealText, order } from "@/components/site/motion";
 import { ParticleField } from "@/components/site/particle-field";
 import { Badge } from "@/components/ui/badge";
@@ -42,7 +42,7 @@ export function Projects({ lang, dict }: { lang: Locale; dict: Dictionary }) {
                   )}
                 >
                   <div className={lead ? "" : "shrink-0 sm:w-[38%]"}>
-                    <ProjectDiagram kind={project.kind} />
+                    <ProjectScene kind={project.kind} />
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-wrap gap-2">

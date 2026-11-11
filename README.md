@@ -49,8 +49,19 @@ Copy `.env.example` to `.env.local` for local work. Set the same values in Verce
 | `CONTACT_TO_EMAIL` | The inbox that receives requests: `nandy@diframe.studio` |
 | `CONTACT_FROM_EMAIL` | The sender, on the domain verified with Resend: `Diframe Website <website@diframe.studio>` |
 | `NEXT_PUBLIC_SITE_URL` | Optional. Leave it empty to use `https://diframe.studio`. |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Optional spam check (Cloudflare Turnstile). The public site key. |
+| `TURNSTILE_SECRET_KEY` | Optional spam check. The secret key. Set both keys, or neither. |
 
 Until all three email settings are set, the form tells visitors their request wasn't sent, and keeps their text.
+
+### Spam check (optional)
+1. In Cloudflare (free account), open **Turnstile → Add widget**, add the domain `diframe.studio`, and choose **Managed** mode.
+2. Add the two keys in Vercel, then redeploy.
+
+Most visitors never see it. Without the keys, the form still works with its built-in checks.
+
+### Visitor statistics
+The site sends anonymous visit counts to Vercel Web Analytics, without cookies. Turn it on in Vercel under **Project → Analytics → Enable**. Nothing is collected until it's on.
 
 ## Launch checklist
 

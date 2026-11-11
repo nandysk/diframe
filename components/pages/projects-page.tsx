@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Closing } from "@/components/home/closing";
-import { ProjectDiagram } from "@/components/home/project-diagram";
+import { ProjectScene } from "@/components/projects/project-scenes";
 import { GlassStage, order } from "@/components/site/motion";
 import { ParticleField } from "@/components/site/particle-field";
 import { PageHero } from "@/components/site/page-hero";
@@ -39,7 +39,7 @@ export function ProjectsPage({ lang, dict }: { lang: Locale; dict: Dictionary })
                 className="scroll-mt-28 gap-8 rounded-[32px] p-6 text-base md:rounded-[40px] md:p-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16 lg:p-14"
               >
                 <div className={index % 2 ? "lg:order-last" : ""}>
-                  <ProjectDiagram kind={project.kind} />
+                  <ProjectScene kind={project.kind} />
                 </div>
                 <div>
                   <div className="flex flex-wrap gap-2">

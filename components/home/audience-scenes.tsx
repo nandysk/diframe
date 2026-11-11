@@ -25,7 +25,7 @@ import {
 } from "@/components/solutions/iso-scenes";
 
 // Windows on both visible walls of a building, lit in the card's color where `lit` says so.
-function Windows({ box, rows, cols, sideCols, lit }: { box: Box; rows: number[]; cols: number; sideCols: number; lit: (row: number, col: number) => boolean }) {
+export function Windows({ box, rows, cols, sideCols, lit }: { box: Box; rows: number[]; cols: number; sideCols: number; lit: (row: number, col: number) => boolean }) {
   const z = box.z ?? 0;
   const fw = box.w / cols;
   const sw = box.d / sideCols;
@@ -51,7 +51,7 @@ function Windows({ box, rows, cols, sideCols, lit }: { box: Box; rows: number[];
 }
 
 // A gable roof whose ridge runs from back to front: the gable faces the viewer's left, the slope the right.
-function Gable({ x, y, z, w, d, rise, material = "metal" }: { x: number; y: number; z: number; w: number; d: number; rise: number; material?: "metal" | "accent" | "panel" }) {
+export function Gable({ x, y, z, w, d, rise, material = "metal" }: { x: number; y: number; z: number; w: number; d: number; rise: number; material?: "metal" | "accent" | "panel" }) {
   const ridge = x + w / 2;
   return (
     <g stroke="var(--iso-edge)" strokeLinejoin="round">

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Turnstile } from "@/components/pages/turnstile";
 import type { Dictionary } from "@/content";
 import { sendContact } from "@/lib/contact/action";
 import { DEFAULT_TOPIC, LIMITS, TOPICS, isTopic, type ContactState, type FieldError, type Topic } from "@/lib/contact/validate";
@@ -78,7 +79,7 @@ export function ContactForm({ lang, dict }: { lang: Locale; dict: Dictionary }) 
 
   const values = "values" in state ? state.values : undefined;
   const errors = state.status === "invalid" ? state.errors : {};
-  const notice = state.status === "tooFast" || state.status === "rateLimited" || state.status === "failed" ? form[state.status].replace("{email}", dict.contact.email) : null;
+  const notice = state.status === "tooFast" || state.status === "rateLimited" || state.status === "notVerified" || state.status === "failed" ? form[state.status].replace("{email}", dict.contact.email) : null;
   const errorText = (field: keyof typeof form.errors, code?: FieldError) =>
     code ? (form.errors[field] as Partial<Record<FieldError, string>>)[code] : undefined;
   const describe = (field: string, hasError: boolean, hint = false) =>
@@ -194,6 +195,8 @@ export function ContactForm({ lang, dict }: { lang: Locale; dict: Dictionary }) 
         />
         <FieldMessage id="message-error" message={errorText("message", errors.message)} />
       </div>
+
+      <Turnstile lang={lang} resetKey={state} />
 
       {notice && (
         <p ref={noticeRef} tabIndex={-1} role="alert" className="flex items-start gap-2 rounded-[14px] border border-[color:var(--danger)] p-4 font-medium outline-none">

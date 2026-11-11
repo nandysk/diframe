@@ -3,6 +3,7 @@ import { GlassStage, RevealText, order } from "@/components/site/motion";
 import { Card } from "@/components/ui/card";
 import type { Dictionary } from "@/content";
 import { clientLogos } from "@/lib/brand-assets";
+import { cn } from "@/lib/utils";
 
 export function Proof({ dict }: { dict: Dictionary }) {
   const { proof } = dict;
@@ -53,7 +54,11 @@ export function Proof({ dict }: { dict: Dictionary }) {
                         width={logo.width}
                         height={logo.height}
                         sizes="180px"
-                        className="h-auto max-h-14 w-auto max-w-[78%] object-contain"
+                        className={cn(
+                          "h-auto w-auto max-w-[78%] object-contain",
+                          // Emblems are nearly square, so they get more height to stay as legible as wordmarks.
+                          logo.width / logo.height < 2 ? "max-h-[4.5rem]" : "max-h-14",
+                        )}
                       />
                     ) : (
                       <span className="text-[1.0625rem] font-medium leading-snug tracking-[-0.01em]">{client}</span>

@@ -8,6 +8,9 @@ export const clientLogos: Record<string, BrandImage> = {
   SLB: { src: "/brand/clients/slb.webp", width: 800, height: 480 },
   "Aker Solutions": { src: "/brand/clients/aker-solutions.webp", width: 800, height: 227 },
   Supersonic: { src: "/brand/clients/supersonic.webp", width: 290, height: 60 },
+  "La Cité des Grands Lacs": { src: "/brand/clients/la-cite-des-grands-lacs.webp", width: 600, height: 392 },
+  "Lamba Foundation": { src: "/brand/clients/lamba-foundation.webp", width: 470, height: 600 },
+  "Infinitech Congo": { src: "/brand/clients/infinitech-congo.webp", width: 1200, height: 137 },
 };
 
 export const certificationImages: Record<string, BrandImage> = {

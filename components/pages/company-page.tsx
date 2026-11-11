@@ -1,5 +1,5 @@
-import { About } from "@/components/home/about";
-import { Audiences } from "@/components/home/audiences";
+import { Commitments } from "@/components/company/commitments";
+import { Values } from "@/components/company/values";
 import { Closing } from "@/components/home/closing";
 import { Expertise } from "@/components/home/expertise";
 import { Process } from "@/components/home/process";
@@ -26,9 +26,9 @@ export function CompanyPage({ lang, dict }: { lang: Locale; dict: Dictionary }) 
           </Card>
         }
       />
-      <About lang={lang} dict={dict} showLink={false} />
+      <Values dict={dict} />
       <Proof dict={dict} />
-      <Audiences lang={lang} dict={dict} />
+      <Commitments dict={dict} />
       <div className="pt-[clamp(72px,10vw,152px)]">
         <Expertise dict={dict} />
       </div>

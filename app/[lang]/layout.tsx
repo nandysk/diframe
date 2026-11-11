@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -79,6 +80,8 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <SiteNav lang={lang} nav={dict.nav} a11y={dict.a11y} />
         <main id="main">{children}</main>
         <SiteFooter lang={lang} dict={dict} />
+        {/* Visit counts without cookies. It only sends data once Web Analytics is turned on in Vercel. */}
+        <Analytics />
       </body>
     </html>
   );

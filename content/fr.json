@@ -1,8 +1,8 @@
 {
   "meta": {
     "siteName": "Diframe",
-    "homeTitle": "Diframe | L’ingénierie de la transformation numérique",
-    "description": "Diframe aide les organisations à se moderniser grâce à l’ingénierie logicielle, à l’IA et à l’automatisation, aux données, à l’infrastructure informatique et à la cybersécurité.",
+    "homeTitle": "Diframe | Logiciel, IA, données, cloud et cybersécurité",
+    "description": "Une seule équipe pour le logiciel, l’IA, les données, le cloud, la cybersécurité et le design. Nous créons ce qui vous manque, améliorons l’existant et l’accompagnons dans la durée.",
     "shareAlt": "Le logo de Diframe sur un fond sombre éclairé de bleu et de violet, au-dessus de l’adresse diframe.studio."
   },
   "a11y": {
@@ -545,11 +545,63 @@
     "more": "Ainsi que d’autres certifications reconnues à l’international."
   },
   "company": {
-    "title": "L’ingénierie de la transformation numérique.",
-    "text": "Donner aux entreprises les moyens d’agir grâce à la technologie, à l’intelligence et à l’innovation.",
-    "description": "Diframe est une entreprise de transformation numérique et de technologie, en activité depuis 2021, avec une équipe pluridisciplinaire et des certifications reconnues à l’international.",
+    "title": "Un seul partenaire pour les systèmes dont vous dépendez.",
+    "text": "Depuis 2021, nous concevons, améliorons et sécurisons des logiciels, des données et des infrastructures pour des organisations de toutes tailles. Voici ce qui compte pour nous, et ce que vous pouvez attendre de nous.",
+    "description": "Depuis 2021, Diframe conçoit, améliore et sécurise les systèmes d’organisations de toutes tailles. Nos valeurs, et ce que vous pouvez attendre en travaillant avec nous.",
     "sinceLabel": "En activité depuis",
     "sinceValue": "2021"
+  },
+  "values": {
+    "label": "Nos valeurs",
+    "title": "Ce que les organisations attendent d’un partenaire technologique, et notre réponse.",
+    "items": [
+      {
+        "name": "Une seule équipe responsable",
+        "text": "Logiciel, données, infrastructure et sécurité sont réunis dans une même équipe : rien ne se perd entre deux prestataires, et vous savez toujours qui est responsable."
+      },
+      {
+        "name": "Vos systèmes existants d’abord",
+        "text": "Nous nous appuyons sur ce qui fonctionne déjà et ne remplaçons que ce qui vous freine : vos équipes gardent leurs habitudes, et vos investissements gardent leur valeur."
+      },
+      {
+        "name": "Des plans clairs, sans jargon",
+        "text": "Chaque proposition précise ce que nous livrerons, quand et à quel coût, dans des mots que toute votre équipe peut suivre."
+      },
+      {
+        "name": "La sécurité dès le départ",
+        "text": "Accès, sauvegardes et mises à jour sont prévus dès le premier jour de chaque projet, et non ajoutés à la fin."
+      },
+      {
+        "name": "La discrétion sur vos données",
+        "text": "Vos documents et vos données sont traités de façon confidentielle, et uniquement pour le travail que vous nous avez confié."
+      },
+      {
+        "name": "Présents après la mise en service",
+        "text": "Nous formons votre équipe, documentons ce que nous livrons et restons disponibles pour le maintenir et le faire évoluer."
+      }
+    ]
+  },
+  "commitments": {
+    "title": "Ce que vous pouvez attendre",
+    "text": "Travailler avec nous suit les mêmes règles simples, quelle que soit la taille du projet.",
+    "items": [
+      {
+        "name": "Une réponse sous 1 jour ouvré",
+        "text": "Chaque demande reçoit la réponse d’une personne, avec une prochaine étape claire."
+      },
+      {
+        "name": "Un seul interlocuteur du début à la fin",
+        "text": "La même personne suit votre projet : vous n’avez jamais à l’expliquer deux fois."
+      },
+      {
+        "name": "Des progrès visibles",
+        "text": "Le travail est livré par étapes, et vous validez chacune avant de passer à la suivante."
+      },
+      {
+        "name": "Une vraie passation",
+        "text": "Vous recevez la documentation et une formation, pour que votre équipe puisse faire fonctionner ce que nous avons construit."
+      }
+    ]
   },
   "process": {
     "title": "Notre méthode",
@@ -614,6 +666,7 @@
       "sentLink": "Voir nos projets",
       "tooFast": "Le formulaire a été envoyé trop vite pour notre contrôle anti-spam. Sélectionnez à nouveau « Demander une consultation ».",
       "rateLimited": "Trop de demandes proviennent de cette connexion. Votre texte est conservé : attendez 10 minutes, puis renvoyez-le.",
+      "notVerified": "Nous n’avons pas pu confirmer que cette demande vient d’une personne. Votre texte est conservé : terminez la vérification ci-dessus, puis renvoyez-le.",
       "failed": "Votre demande n’a pas été envoyée. Votre texte est conservé : réessayez dans quelques minutes ou écrivez-nous à {email}.",
       "errors": {
         "name": {
