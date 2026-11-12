@@ -470,48 +470,72 @@
     "title": "Nos réalisations",
     "text": "Les interfaces, visuels et documents que nous avons conçus.",
     "link": "Voir les réalisations",
+    "projects": {
+      "cite": {
+        "name": "La Cité des Grands Lacs",
+        "text": "Site d’un écolodge et lieu de loisirs : hébergements, activités nautiques, safari et réservation."
+      },
+      "lamba": {
+        "name": "Lamba Foundation",
+        "text": "Site d’une fondation qui protège la biodiversité : sa mission, sa réserve, ses actualités et les dons."
+      }
+    },
     "items": [
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Écran d’interface",
+        "image": "/showcase/cite-des-grands-lacs-homepage.webp",
+        "alt": "Page d’accueil de La Cité des Grands Lacs, avec une vidéo aérienne d’un bateau sur le lac, le titre « Là où le Congo se révèle autrement » et une barre de réservation pour les dates et les voyageurs.",
+        "placeholder": "Accueil de La Cité des Grands Lacs",
         "type": "interfaces",
-        "caption": ""
+        "caption": "Site de La Cité des Grands Lacs : page d’accueil",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Écran mobile",
+        "image": "/showcase/cite-des-grands-lacs-mobile-home.webp",
+        "alt": "La page d’accueil de La Cité des Grands Lacs sur mobile, avec le titre sur une vue aérienne du site.",
+        "placeholder": "La Cité des Grands Lacs sur mobile",
         "type": "interfaces",
-        "caption": ""
+        "caption": "Site de La Cité des Grands Lacs : accueil sur mobile",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Visuel",
-        "type": "graphics",
-        "caption": ""
-      },
-      {
-        "image": "",
-        "alt": "",
-        "placeholder": "Détail de tableau de bord",
+        "image": "/showcase/cite-des-grands-lacs-activities.webp",
+        "alt": "Section des activités avec des cartes pour le jet-ski, le tour en bateau et le safari, chacune avec une photo et une courte description.",
+        "placeholder": "Activités",
         "type": "interfaces",
-        "caption": ""
+        "caption": "Site de La Cité des Grands Lacs : activités à réserver à l’avance",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Pièce de marque",
-        "type": "brand",
-        "caption": ""
+        "image": "/showcase/cite-des-grands-lacs-rooms.webp",
+        "alt": "Section des hébergements sur fond orange, avec la chambre Standard présentée en carte photo et un bouton pour la découvrir.",
+        "placeholder": "Hébergements",
+        "type": "interfaces",
+        "caption": "Site de La Cité des Grands Lacs : chambres et bungalows",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Document",
-        "type": "brand",
-        "caption": ""
+        "image": "/showcase/cite-des-grands-lacs-story.webp",
+        "alt": "Section histoire avec une photo aérienne du lodge au bord du lac, et le texte « Une destination née entre lacs, savanes et forêts ».",
+        "placeholder": "Notre histoire",
+        "type": "interfaces",
+        "caption": "Site de La Cité des Grands Lacs : l’histoire de la destination",
+        "project": "cite"
+      },
+      {
+        "image": "/showcase/cite-des-grands-lacs-experiences.webp",
+        "alt": "Section « Le lac ne se visite pas d’une seule façon », avec de grandes cartes photo pour séjourner à Yanga, les activités nautiques et la faune.",
+        "placeholder": "Expériences",
+        "type": "interfaces",
+        "caption": "Site de La Cité des Grands Lacs : les façons de découvrir le lac",
+        "project": "cite"
+      },
+      {
+        "image": "/showcase/lamba-foundation-home.webp",
+        "alt": "Page d’accueil de Lamba Foundation, avec le titre « Préserver ce qui nous fait vivre », un court texte sur la biodiversité et la photo d’un mandrill dans un cadre en arche.",
+        "placeholder": "Accueil de Lamba Foundation",
+        "type": "interfaces",
+        "caption": "Site de Lamba Foundation : page d’accueil",
+        "project": "lamba"
       }
     ],
     "page": {

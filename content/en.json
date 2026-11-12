@@ -470,48 +470,72 @@
     "title": "From the showcase",
     "text": "Interfaces, graphics and documents we’ve designed.",
     "link": "View the showcase",
+    "projects": {
+      "cite": {
+        "name": "La Cité des Grands Lacs",
+        "text": "Website for an eco-lodge and leisure destination: accommodation, water activities, safari and booking."
+      },
+      "lamba": {
+        "name": "Lamba Foundation",
+        "text": "Website for a foundation that protects biodiversity: its mission, its reserve, its news and donations."
+      }
+    },
     "items": [
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Interface screen",
+        "image": "/showcase/cite-des-grands-lacs-homepage.webp",
+        "alt": "Homepage of La Cité des Grands Lacs, with a drone video of a boat on the lake, the headline “Là où le Congo se révèle autrement” and a booking bar for dates and guests.",
+        "placeholder": "La Cité des Grands Lacs homepage",
         "type": "interfaces",
-        "caption": ""
+        "caption": "Website for La Cité des Grands Lacs: homepage",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Mobile screen",
+        "image": "/showcase/cite-des-grands-lacs-mobile-home.webp",
+        "alt": "The La Cité des Grands Lacs homepage on a phone, with the headline over an aerial view of the site.",
+        "placeholder": "La Cité des Grands Lacs on phone",
         "type": "interfaces",
-        "caption": ""
+        "caption": "Website for La Cité des Grands Lacs: homepage on a phone",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Graphic",
-        "type": "graphics",
-        "caption": ""
-      },
-      {
-        "image": "",
-        "alt": "",
-        "placeholder": "Dashboard detail",
+        "image": "/showcase/cite-des-grands-lacs-activities.webp",
+        "alt": "Activities section with cards for jet ski, boat tour and safari game viewer, each with a photo and a short description.",
+        "placeholder": "Activities",
         "type": "interfaces",
-        "caption": ""
+        "caption": "Website for La Cité des Grands Lacs: activities to book in advance",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Brand piece",
-        "type": "brand",
-        "caption": ""
+        "image": "/showcase/cite-des-grands-lacs-rooms.webp",
+        "alt": "Accommodation section on an orange background, with the Standard room shown as a photo card and a button to see the room.",
+        "placeholder": "Accommodation",
+        "type": "interfaces",
+        "caption": "Website for La Cité des Grands Lacs: rooms and bungalows",
+        "project": "cite"
       },
       {
-        "image": "",
-        "alt": "",
-        "placeholder": "Document",
-        "type": "brand",
-        "caption": ""
+        "image": "/showcase/cite-des-grands-lacs-story.webp",
+        "alt": "Story section with an aerial photo of the lodge beside the lake, and the text “Une destination née entre lacs, savanes et forêts”.",
+        "placeholder": "Our story",
+        "type": "interfaces",
+        "caption": "Website for La Cité des Grands Lacs: the destination’s story",
+        "project": "cite"
+      },
+      {
+        "image": "/showcase/cite-des-grands-lacs-experiences.webp",
+        "alt": "Section “Le lac ne se visite pas d’une seule façon”, with large photo cards for staying in Yanga, water activities and wildlife.",
+        "placeholder": "Things to do",
+        "type": "interfaces",
+        "caption": "Website for La Cité des Grands Lacs: ways to visit the lake",
+        "project": "cite"
+      },
+      {
+        "image": "/showcase/lamba-foundation-home.webp",
+        "alt": "Homepage of Lamba Foundation, with the headline “Préserver ce qui nous fait vivre”, a short text on biodiversity and a photo of a mandrill in an arched frame.",
+        "placeholder": "Lamba Foundation homepage",
+        "type": "interfaces",
+        "caption": "Website for Lamba Foundation: homepage",
+        "project": "lamba"
       }
     ],
     "page": {

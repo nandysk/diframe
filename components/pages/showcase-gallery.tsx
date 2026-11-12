@@ -13,23 +13,34 @@ import { cn } from "@/lib/utils";
 type Showcase = Dictionary["showcase"];
 type Item = Showcase["items"][number];
 
-// Large pieces first, smaller ones filling in around them.
+// Large pieces first, smaller ones filling in around them. Each frame also says which part
+// of a screenshot it keeps: the top for most, the middle of the page for the wide closing frame.
 const FRAMES = [
   "col-span-2 aspect-[16/10] lg:col-span-4 lg:row-span-2 lg:aspect-auto",
   "aspect-[9/14] lg:col-span-2 lg:row-span-2 lg:aspect-auto",
   "aspect-[9/14] lg:col-span-2 lg:aspect-auto",
   "col-span-2 aspect-[16/9] lg:col-span-2 lg:aspect-auto",
   "col-span-2 aspect-[16/9] lg:col-span-2 lg:aspect-auto",
-  "col-span-2 aspect-[16/7] lg:col-span-6 lg:aspect-auto",
+  "col-span-2 aspect-[16/9] lg:col-span-6 lg:row-span-2 lg:aspect-auto",
 ];
+const FOCUS = ["", "", "", "", "", "lg:object-[left_42%]"];
+
+// A project with a single piece shows it across the full width, at the screenshot's own shape.
+const SINGLE = "col-span-2 aspect-[2/1] lg:col-span-6";
 
 function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }) {
   const pathname = usePathname();
-  const { page, items } = showcase;
-  const filters = Object.entries(page.types);
+  const { page, items, projects } = showcase;
+  // Only types that have pieces get a filter, and the filters only appear once there are two.
+  const filters = Object.entries(page.types).filter(([key]) => items.some((item) => item.type === key));
   const active = filters.some(([key]) => key === type) ? type : null;
   const visible = items.filter((item) => !active || item.type === active);
-  const viewable = visible.filter((item) => item.image);
+  // Pieces are grouped by the website or project they come from, in the order they first appear.
+  const grouped = new Map<string, Item[]>();
+  for (const item of visible) grouped.set(item.project, [...(grouped.get(item.project) ?? []), item]);
+  const groups = [...grouped.entries()];
+  // The viewer steps through the pieces in the order they appear on the page.
+  const viewable = groups.flatMap(([, pieces]) => pieces).filter((item) => item.image);
 
   const [open, setOpen] = useState<number | null>(null);
   const touchStart = useRef<number | null>(null);
@@ -56,43 +67,69 @@ function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }
 
   return (
     <>
-      <nav aria-label={page.filterLabel} className="flex flex-wrap gap-2">
-        {filterLink(pathname, page.all, !active)}
-        {filters.map(([key, label]) => filterLink(`${pathname}?type=${key}`, label, active === key))}
-      </nav>
+      {filters.length > 1 && (
+        <nav aria-label={page.filterLabel} className="flex flex-wrap gap-2">
+          {filterLink(pathname, page.all, !active)}
+          {filters.map(([key, label]) => filterLink(`${pathname}?type=${key}`, label, active === key))}
+        </nav>
+      )}
 
-      <ul className="mt-8 grid grid-cols-2 gap-3 lg:auto-rows-[clamp(180px,17vw,250px)] lg:grid-cols-6 lg:gap-4">
-        {visible.map((item) => {
-          const frame = FRAMES[items.indexOf(item) % FRAMES.length];
-          return (
-            <li
-              key={item.placeholder}
-              className={cn("relative overflow-hidden rounded-[20px] duration-500 animate-in fade-in-0", frame)}
-            >
-              {item.image ? (
-                <button
-                  type="button"
-                  aria-label={`${page.open}: ${item.caption || item.alt}`}
-                  onClick={() => setOpen(viewable.indexOf(item))}
-                  className="group absolute inset-0 cursor-zoom-in"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 1024px) 66vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </button>
-              ) : (
-                <div className="frame-empty flex h-full items-end rounded-[20px] p-4 text-sm text-muted-foreground">
-                  {item.placeholder}
-                </div>
+      <div className={cn("space-y-16 md:space-y-24", filters.length > 1 && "mt-8")}>
+        {groups.map(([project, pieces]) => (
+          <section key={project} aria-labelledby={`project-${project}`}>
+            <div className="mb-6 flex flex-wrap items-baseline justify-between gap-x-10 gap-y-2 md:mb-8">
+              <h2 id={`project-${project}`} className="text-[clamp(1.5rem,2.4vw,2rem)] font-medium leading-[1.15] tracking-[-0.025em]">
+                {projects[project as keyof typeof projects]?.name}
+              </h2>
+              <p className="max-w-[52ch] text-muted-foreground">{projects[project as keyof typeof projects]?.text}</p>
+            </div>
+            <ul
+              className={cn(
+                "grid grid-cols-2 gap-3 lg:grid-cols-6 lg:gap-4",
+                pieces.length > 1 && "lg:auto-rows-[clamp(180px,17vw,250px)]",
               )}
-            </li>
-          );
-        })}
-      </ul>
+            >
+              {pieces.map((item, index) => {
+                const frame = pieces.length === 1 ? SINGLE : FRAMES[index % FRAMES.length];
+                const focus = pieces.length === 1 ? "" : FOCUS[index % FRAMES.length];
+                return (
+                  <li
+                    key={item.placeholder}
+                    className={cn(
+                      "relative overflow-hidden rounded-[20px] ring-1 ring-foreground/10 duration-500 animate-in fade-in-0",
+                      frame,
+                    )}
+                  >
+                    {item.image ? (
+                      <button
+                        type="button"
+                        aria-label={`${page.open}: ${item.caption || item.alt}`}
+                        onClick={() => setOpen(viewable.indexOf(item))}
+                        className="group absolute inset-0 cursor-zoom-in"
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.alt}
+                          fill
+                          sizes={pieces.length === 1 ? "(min-width: 1280px) 1280px, 100vw" : "(min-width: 1024px) 66vw, 100vw"}
+                          className={cn(
+                            "object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.02]",
+                            focus,
+                          )}
+                        />
+                      </button>
+                    ) : (
+                      <div className="frame-empty flex h-full items-end rounded-[20px] p-4 text-sm text-muted-foreground">
+                        {item.placeholder}
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ))}
+      </div>
 
       <Dialog open={open !== null} onOpenChange={(isOpen) => !isOpen && setOpen(null)}>
         <DialogContent
