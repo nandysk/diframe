@@ -4,29 +4,16 @@ import { CaretLeftIcon, CaretRightIcon, XIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, type ReactNode } from "react";
 import { Dialog, DialogClose, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { badgeVariants } from "@/components/ui/badge";
+import { BrowserFrame, DeviceStage, PhoneFrame } from "@/components/showcase/device-frames";
 import type { Dictionary } from "@/content";
+import { groupShowcase, pageOrder } from "@/lib/showcase";
 import { cn } from "@/lib/utils";
 
 type Showcase = Dictionary["showcase"];
 type Item = Showcase["items"][number];
-
-// Large pieces first, smaller ones filling in around them. Each frame also says which part
-// of a screenshot it keeps: the top for most, the middle of the page for the wide closing frame.
-const FRAMES = [
-  "col-span-2 aspect-[16/10] lg:col-span-4 lg:row-span-2 lg:aspect-auto",
-  "aspect-[9/14] lg:col-span-2 lg:row-span-2 lg:aspect-auto",
-  "aspect-[9/14] lg:col-span-2 lg:aspect-auto",
-  "col-span-2 aspect-[16/9] lg:col-span-2 lg:aspect-auto",
-  "col-span-2 aspect-[16/9] lg:col-span-2 lg:aspect-auto",
-  "col-span-2 aspect-[16/9] lg:col-span-6 lg:row-span-2 lg:aspect-auto",
-];
-const FOCUS = ["", "", "", "", "", "lg:object-[left_42%]"];
-
-// A project with a single piece shows it across the full width, at the screenshot's own shape.
-const SINGLE = "col-span-2 aspect-[2/1] lg:col-span-6";
 
 function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }) {
   const pathname = usePathname();
@@ -34,13 +21,8 @@ function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }
   // Only types that have pieces get a filter, and the filters only appear once there are two.
   const filters = Object.entries(page.types).filter(([key]) => items.some((item) => item.type === key));
   const active = filters.some(([key]) => key === type) ? type : null;
-  const visible = items.filter((item) => !active || item.type === active);
-  // Pieces are grouped by the website or project they come from, in the order they first appear.
-  const grouped = new Map<string, Item[]>();
-  for (const item of visible) grouped.set(item.project, [...(grouped.get(item.project) ?? []), item]);
-  const groups = [...grouped.entries()];
-  // The viewer steps through the pieces in the order they appear on the page.
-  const viewable = groups.flatMap(([, pieces]) => pieces).filter((item) => item.image);
+  const groups = groupShowcase(items.filter((item) => !active || item.type === active));
+  const viewable = pageOrder(groups).filter((item) => item.image);
 
   const [open, setOpen] = useState<number | null>(null);
   const touchStart = useRef<number | null>(null);
@@ -74,61 +56,88 @@ function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }
         </nav>
       )}
 
-      <div className={cn("space-y-16 md:space-y-24", filters.length > 1 && "mt-8")}>
-        {groups.map(([project, pieces]) => (
-          <section key={project} aria-labelledby={`project-${project}`}>
-            <div className="mb-6 flex flex-wrap items-baseline justify-between gap-x-10 gap-y-2 md:mb-8">
-              <h2 id={`project-${project}`} className="text-[clamp(1.5rem,2.4vw,2rem)] font-medium leading-[1.15] tracking-[-0.025em]">
-                {projects[project as keyof typeof projects]?.name}
-              </h2>
-              <p className="max-w-[52ch] text-muted-foreground">{projects[project as keyof typeof projects]?.text}</p>
-            </div>
-            <ul
-              className={cn(
-                "grid grid-cols-2 gap-3 lg:grid-cols-6 lg:gap-4",
-                pieces.length > 1 && "lg:auto-rows-[clamp(180px,17vw,250px)]",
+      <div className={cn("space-y-20 md:space-y-28", filters.length > 1 && "mt-8")}>
+        {groups.map(({ project, cover, phone, rest }) => {
+          const details = projects[project as keyof typeof projects];
+          // Each frame opens the full-size screenshot in the viewer.
+          // The button's label describes the screenshot, so the image inside needs no description of its own.
+          const opens = (item: Item, children: ReactNode, className?: string) =>
+            item.image ? (
+              <button
+                type="button"
+                aria-label={`${page.open}: ${item.caption || item.alt}`}
+                onClick={() => setOpen(viewable.indexOf(item))}
+                className={cn(
+                  "block w-full cursor-zoom-in rounded-[14px] text-left",
+                  className,
+                )}
+              >
+                {children}
+              </button>
+            ) : (
+              children
+            );
+
+          return (
+            <section key={project} aria-labelledby={`project-${project}`} className="duration-500 animate-in fade-in-0">
+              <div className="mb-6 flex flex-wrap items-baseline justify-between gap-x-10 gap-y-2 md:mb-8">
+                <h2 id={`project-${project}`} className="text-[clamp(1.5rem,2.4vw,2rem)] font-medium leading-[1.15] tracking-[-0.025em]">
+                  {details?.name}
+                </h2>
+                <p className="max-w-[52ch] text-muted-foreground">{details?.text}</p>
+              </div>
+
+              {cover && (
+                <DeviceStage
+                  tint={details?.tint ?? "transparent"}
+                  browser={opens(
+                    cover,
+                    <BrowserFrame
+                      site={details?.site ?? ""}
+                      src={cover.image}
+                      alt=""
+                      sizes="(min-width: 1280px) 960px, 80vw"
+                    />,
+                  )}
+                  phone={
+                    phone &&
+                    opens(
+                      phone,
+                      <PhoneFrame src={phone.image} alt="" sizes="(min-width: 1280px) 208px, 22vw" />,
+                      "rounded-[2.1rem]",
+                    )
+                  }
+                />
               )}
-            >
-              {pieces.map((item, index) => {
-                const frame = pieces.length === 1 ? SINGLE : FRAMES[index % FRAMES.length];
-                const focus = pieces.length === 1 ? "" : FOCUS[index % FRAMES.length];
-                return (
-                  <li
-                    key={item.placeholder}
-                    className={cn(
-                      "relative overflow-hidden rounded-[20px] ring-1 ring-foreground/10 duration-500 animate-in fade-in-0",
-                      frame,
-                    )}
-                  >
-                    {item.image ? (
-                      <button
-                        type="button"
-                        aria-label={`${page.open}: ${item.caption || item.alt}`}
-                        onClick={() => setOpen(viewable.indexOf(item))}
-                        className="group absolute inset-0 cursor-zoom-in"
-                      >
-                        <Image
-                          src={item.image}
-                          alt={item.alt}
-                          fill
-                          sizes={pieces.length === 1 ? "(min-width: 1280px) 1280px, 100vw" : "(min-width: 1024px) 66vw, 100vw"}
-                          className={cn(
-                            "object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.02]",
-                            focus,
+
+              {rest.length > 0 && (
+                <ul className="mt-4 grid gap-4 sm:grid-cols-2 md:mt-6 md:gap-6">
+                  {rest.map((item) => (
+                    <li key={item.placeholder}>
+                      {item.device === "phone" ? (
+                        opens(item, <PhoneFrame src={item.image} alt="" sizes="(min-width: 640px) 25vw, 60vw" className="mx-auto max-w-[16rem]" />)
+                      ) : (
+                        <DeviceStage
+                          tint={details?.tint ?? "transparent"}
+                          browser={opens(
+                            item,
+                            <BrowserFrame
+                              site={details?.site ?? ""}
+                              src={item.image}
+                              alt=""
+                              sizes="(min-width: 1280px) 600px, (min-width: 640px) 46vw, 92vw"
+                            />,
                           )}
                         />
-                      </button>
-                    ) : (
-                      <div className="frame-empty flex h-full items-end rounded-[20px] p-4 text-sm text-muted-foreground">
-                        {item.placeholder}
-                      </div>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        ))}
+                      )}
+                      <p className="mt-3 text-[0.9375rem] text-muted-foreground">{item.placeholder}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          );
+        })}
       </div>
 
       <Dialog open={open !== null} onOpenChange={(isOpen) => !isOpen && setOpen(null)}>

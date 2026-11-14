@@ -1,33 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrowserFrame, DeviceStage, PhoneFrame } from "@/components/showcase/device-frames";
 import { RevealText, order } from "@/components/site/motion";
 import type { Dictionary } from "@/content";
 import { pagePath, type Locale } from "@/lib/i18n/routes";
+import { groupShowcase } from "@/lib/showcase";
 
-// Uneven frames sized for the piece each one is meant to hold.
-const FRAMES = [
-  "col-span-2 aspect-[16/10] lg:col-span-7 lg:row-span-2 lg:aspect-auto",
-  "aspect-[9/14] lg:col-span-3 lg:row-span-2 lg:aspect-auto",
-  "aspect-[9/14] lg:col-span-2 lg:aspect-auto",
-  "col-span-2 aspect-[16/9] lg:col-span-2 lg:aspect-auto",
-];
-// Which part of each screenshot a frame keeps. The large frame keeps the page's headline whole,
-// and the last frame leans right, where a desktop page usually puts its image.
-const FOCUS = ["object-[40%_top]", "object-left-top", "object-left-top", "object-[75%_top]"];
+// Two websites side by side, each on its own stage: the homepage in a browser, and the
+// phone view in front when there is one. The rest is on the Showcase page.
+const SHOWN = 2;
 
 export function ShowcaseStrip({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const { showcase } = dict;
-  // Show the first project's lead pieces, and close the strip with the cover of each other
-  // project, so every website appears. The last frame is wide, which suits a desktop page.
-  const covers = showcase.items.filter(
-    (item, index) => item.image && showcase.items.findIndex((other) => other.project === item.project) === index,
-  );
-  const others = covers.slice(1, FRAMES.length);
-  const rest = showcase.items.filter((item) => item.image && !covers.includes(item));
-  // Before any images exist, the empty frames show the planned pieces instead.
-  const pieces = covers.length
-    ? [covers[0], ...rest.slice(0, FRAMES.length - 1 - others.length), ...others]
-    : showcase.items.slice(0, FRAMES.length);
+  const groups = groupShowcase(showcase.items)
+    .filter((group) => group.cover)
+    .slice(0, SHOWN);
 
   return (
     <section className="section">
@@ -44,23 +30,30 @@ export function ShowcaseStrip({ lang, dict }: { lang: Locale; dict: Dictionary }
           </Link>
         </div>
 
-        <ul className="mt-12 grid grid-cols-2 gap-3 md:mt-16 lg:h-[clamp(420px,42vw,600px)] lg:grid-cols-12 lg:grid-rows-2 lg:gap-4">
-          {pieces.map((item, index) => (
-            <li
-              key={item.placeholder}
-              data-reveal="card"
-              style={order(index)}
-              className={`relative overflow-hidden rounded-[20px] ring-1 ring-foreground/10 ${FRAMES[index]}`}
-            >
-              {item.image ? (
-                <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className={`object-cover ${FOCUS[index]}`} />
-              ) : (
-                <div className="frame-empty flex h-full items-end rounded-[20px] p-4 text-sm text-muted-foreground">
-                  {item.placeholder}
-                </div>
-              )}
-            </li>
-          ))}
+        <ul className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-2">
+          {groups.map(({ project, cover, phone }, index) => {
+            const details = showcase.projects[project as keyof typeof showcase.projects];
+            if (!cover) return null;
+            return (
+              <li key={project} data-reveal="card" style={order(index)} className="flex flex-col">
+                <DeviceStage
+                  tint={details?.tint ?? "transparent"}
+                  className="flex flex-1 flex-col justify-center"
+                  browser={
+                    <BrowserFrame
+                      site={details?.site ?? ""}
+                      src={cover.image}
+                      alt={cover.alt}
+                      sizes="(min-width: 1024px) 560px, 90vw"
+                    />
+                  }
+                  phone={phone && <PhoneFrame src={phone.image} alt={phone.alt} sizes="(min-width: 1024px) 140px, 22vw" />}
+                />
+                <p className="mt-4 text-[1.0625rem] font-medium">{details?.name}</p>
+                <p className="mt-1 text-[0.9375rem] text-muted-foreground">{details?.text}</p>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

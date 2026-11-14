@@ -601,6 +601,31 @@
     border: 1px solid var(--line);
   }
 
+  /* Showcase devices: a macOS window and a phone, turned at the same angle. Pointing at
+     one, or focusing it, turns it halfway back toward the viewer. */
+  .device-tilt {
+    transform: perspective(2400px) rotateX(10deg) rotateY(-18deg) rotateZ(4deg);
+    transition: transform 700ms var(--ease-signal);
+  }
+
+  :is(button, a):is(:hover, :focus-visible) > .device-tilt {
+    transform: perspective(2400px) rotateX(5deg) rotateY(-9deg) rotateZ(2deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .device-tilt {
+      transition: none;
+    }
+  }
+
+  .mac-bar {
+    background: color-mix(in oklab, var(--surface) 93%, var(--fg));
+  }
+
+  .mac-field {
+    background: var(--bg);
+  }
+
   .text-link {
     display: inline-flex;
     align-items: center;

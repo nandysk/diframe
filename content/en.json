@@ -473,11 +473,15 @@
     "projects": {
       "cite": {
         "name": "La Cité des Grands Lacs",
-        "text": "Website for an eco-lodge and leisure destination: accommodation, water activities, safari and booking."
+        "text": "Website for an eco-lodge and leisure destination: accommodation, water activities, safari and booking.",
+        "site": "citedesgrandslacs.com",
+        "tint": "#f19100"
       },
       "lamba": {
         "name": "Lamba Foundation",
-        "text": "Website for a foundation that protects biodiversity: its mission, its reserve, its news and donations."
+        "text": "Website for a foundation that protects biodiversity: its mission, its reserve, its news and donations.",
+        "site": "lamba-foundation.com",
+        "tint": "#0b6b35"
       }
     },
     "items": [
@@ -487,7 +491,8 @@
         "placeholder": "La Cité des Grands Lacs homepage",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: homepage",
-        "project": "cite"
+        "project": "cite",
+        "device": "desktop"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-mobile-home.webp",
@@ -495,7 +500,8 @@
         "placeholder": "La Cité des Grands Lacs on phone",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: homepage on a phone",
-        "project": "cite"
+        "project": "cite",
+        "device": "phone"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-activities.webp",
@@ -503,7 +509,8 @@
         "placeholder": "Activities",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: activities to book in advance",
-        "project": "cite"
+        "project": "cite",
+        "device": "desktop"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-rooms.webp",
@@ -511,7 +518,8 @@
         "placeholder": "Accommodation",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: rooms and bungalows",
-        "project": "cite"
+        "project": "cite",
+        "device": "desktop"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-story.webp",
@@ -519,7 +527,8 @@
         "placeholder": "Our story",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: the destination’s story",
-        "project": "cite"
+        "project": "cite",
+        "device": "desktop"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-experiences.webp",
@@ -527,7 +536,8 @@
         "placeholder": "Things to do",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: ways to visit the lake",
-        "project": "cite"
+        "project": "cite",
+        "device": "desktop"
       },
       {
         "image": "/showcase/lamba-foundation-home.webp",
@@ -535,7 +545,8 @@
         "placeholder": "Lamba Foundation homepage",
         "type": "interfaces",
         "caption": "Website for Lamba Foundation: homepage",
-        "project": "lamba"
+        "project": "lamba",
+        "device": "desktop"
       }
     ],
     "page": {
