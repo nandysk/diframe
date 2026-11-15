@@ -13,7 +13,6 @@ import {
   Segment,
   Signal,
   at,
-  front,
   frontRect,
   n,
   onFront,
@@ -227,123 +226,7 @@ function enterprise(): ReactNode {
   );
 }
 
-/* ---------- Government institutions: a public building, its secured systems and its archive ---------- */
-
-function government(): ReactNode {
-  const columns = [1.75, 2.65, 3.55, 4.45, 5.35];
-  const rack: Box = { x: 7.0, y: 0.9, w: 1.2, d: 1.2, h: 2.6, material: "metal" };
-  const [sx, sy] = at(7.6, 1.5, 4.25);
-  const crest = at(3.5, 3.95, 3.3);
-
-  return (
-    <>
-      <Floor />
-      <Signal
-        paths={[
-          [at(5.8, 2.2, 0.6), at(7.0, 2.2, 0.6)],
-          [at(7.6, 2.1), at(7.6, 4.3)],
-        ]}
-      />
-      <Block x={0.9} y={0.9} w={5.2} d={3.5} h={0.3} material="panel" />
-      <Block x={1.15} y={1.15} z={0.3} w={4.7} d={3.0} h={0.3} material="panel" />
-      <Block x={1.5} y={1.3} z={0.6} w={4.0} d={2.0} h={2.0} material="panel">
-        <polygon fill="var(--iso-slot)" points={front(3.15, 3.85, 3.3, 0.6, 1.9)} />
-      </Block>
-      {columns.map((x) => (
-        <Cylinder key={x} x={x} y={3.65} z={0.6} r={0.22} h={2.0} material="panel" />
-      ))}
-      <Block x={1.25} y={1.2} z={2.6} w={4.5} d={2.75} h={0.32} material="panel" />
-      <Gable x={1.25} y={1.2} z={2.92} w={4.5} d={2.75} rise={1.0} />
-      <circle cx={n(crest[0])} cy={n(crest[1])} r="7" fill="var(--hue)" stroke="var(--iso-edge)" />
-      <Rack box={rack} seed={2} />
-      <path
-        fill="var(--hue)"
-        fillOpacity="0.9"
-        stroke="var(--iso-edge)"
-        d={`M${n(sx)},${n(sy - 20)}L${n(sx + 15)},${n(sy - 14)}V${n(sy - 2)}C${n(sx + 15)},${n(sy + 8)} ${n(sx + 7)},${n(sy + 14)} ${n(sx)},${n(sy + 18)}C${n(sx - 7)},${n(sy + 14)} ${n(sx - 15)},${n(sy + 8)} ${n(sx - 15)},${n(sy - 2)}V${n(sy - 14)}Z`}
-      />
-      <polyline points={pts([[sx - 6, sy], [sx - 1, sy + 5], [sx + 7, sy - 5]])} fill="none" stroke="var(--iso-screen-text)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      <Signal paths={[[at(7.6, 1.5, 2.6), [sx, sy + 20]]]} width={1.2} />
-      {[0, 0.62, 1.24].map((z, i) => {
-        const box: Box = { x: 6.9, y: 4.3, z, w: 1.4, d: 1.0, h: 0.58, material: "panel" };
-        return (
-          <Block key={z} {...box}>
-            <polygon fill={i === 2 ? "var(--hue)" : "var(--iso-ink)"} points={frontRect(box, 0.45, 0.2, 0.5, 0.18)} />
-          </Block>
-        );
-      })}
-    </>
-  );
-}
-
-/* ---------- NGOs and international organizations: sites around the world, one shared dashboard ---------- */
-
-function ngo(): ReactNode {
-  const [gx, gy] = at(3.4, 2.4, 3.2);
-  const gr = 46;
-  const sites = [
-    { x: 6.6, y: 0.8 },
-    { x: 0.5, y: 4.4 },
-    { x: 7.0, y: 4.5 },
-  ];
-  const board: Box = { x: 3.0, y: 5.2, w: 2.8, d: 0.12, h: 1.6, material: "panel" };
-  const pins: Point[] = [
-    [gx - 18, gy - 16],
-    [gx + 20, gy - 4],
-    [gx - 4, gy + 22],
-  ];
-
-  const site = ({ x, y }: { x: number; y: number }, i: number) => (
-    <g key={x}>
-      <Block x={x} y={y} w={1.3} d={1.1} h={0.9} material="panel">
-        <polygon fill={i === 0 ? "var(--hue)" : "var(--iso-slot)"} points={front(x + 0.45, x + 0.85, y + 1.1, 0, 0.6)} />
-      </Block>
-      <Gable x={x} y={y} z={0.9} w={1.3} d={1.1} rise={0.55} material={i === 0 ? "accent" : "metal"} />
-    </g>
-  );
-
-  return (
-    <>
-      <Floor />
-      <Signal
-        paths={[
-          [pins[1], at(7.25, 1.35, 1.45)],
-          [pins[0], at(1.15, 4.95, 1.45)],
-          [pins[2], at(7.65, 5.05, 1.45)],
-          [at(3.4, 2.4, 0.25), at(4.4, 5.2)],
-        ]}
-        width={1.3}
-      />
-      {site(sites[0], 0)}
-      <Cylinder x={3.4} y={2.4} r={0.6} h={0.25} />
-      <Block x={3.3} y={2.3} z={0.25} w={0.2} d={0.2} h={1.1} material="metal" />
-      <circle cx={n(gx)} cy={n(gy)} r={gr} fill="var(--iso-floor-top)" stroke="var(--hue)" strokeWidth="1.6" />
-      <circle cx={n(gx)} cy={n(gy)} r={gr} fill="var(--hue)" fillOpacity="0.12" />
-      <g fill="none" stroke="var(--hue)" strokeOpacity="0.55" strokeWidth="1.1">
-        <ellipse cx={n(gx)} cy={n(gy)} rx={gr} ry={gr * 0.28} />
-        <ellipse cx={n(gx)} cy={n(gy - gr * 0.5)} rx={gr * 0.86} ry={gr * 0.22} />
-        <ellipse cx={n(gx)} cy={n(gy + gr * 0.5)} rx={gr * 0.86} ry={gr * 0.22} />
-        <ellipse cx={n(gx)} cy={n(gy)} rx={gr * 0.42} ry={gr} />
-        <line x1={n(gx)} y1={n(gy - gr)} x2={n(gx)} y2={n(gy + gr)} />
-      </g>
-      <path fill="none" stroke="var(--iso-metal-top)" strokeWidth="3" strokeLinecap="round" d={`M${n(gx - gr * 0.5)},${n(gy + gr * 1.02)}A${gr + 6},${gr + 6} 0 0 0 ${n(gx + gr * 0.62)},${n(gy - gr * 0.92)}`} />
-      {pins.map(([x, y]) => (
-        <circle key={x} cx={n(x)} cy={n(y)} r="3.4" fill="var(--hue)" stroke="var(--iso-screen-text)" strokeWidth="1" />
-      ))}
-      {site(sites[1], 1)}
-      <Block {...board}>
-        <polygon fill="var(--hue)" points={frontRect(board, 0, board.h - 0.24, board.w, 0.24)} />
-        {[0.45, 0.75, 0.6, 1.0].map((h, i) => (
-          <polygon key={i} fill={i === 3 ? "var(--hue)" : "var(--iso-ink)"} points={frontRect(board, 0.25 + i * 0.32, 0.2, 0.2, h)} />
-        ))}
-        <Lines box={board} a={1.75} b={1.05} widths={[0.8, 0.6, 0.75]} gap={0.24} />
-      </Block>
-      {site(sites[2], 2)}
-    </>
-  );
-}
-
-const SCENES: Record<string, () => ReactNode> = { startups, smb, enterprise, government, ngo };
+const SCENES: Record<string, () => ReactNode> = { startups, smb, enterprise };
 
 export function AudienceScene({ kind, index }: { kind: string; index: number }) {
   const scene = SCENES[kind];

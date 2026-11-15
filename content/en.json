@@ -31,8 +31,8 @@
   },
   "about": {
     "label": "About Diframe",
-    "statement": "Diframe is a digital transformation and technology company. We design, build and secure the software, data and infrastructure that organizations rely on every day, from startups to multinationals, governments and NGOs.",
-    "text": "Software engineering, AI and automation, data, IT infrastructure, cybersecurity and digital design sit under one team, so you have one partner from the first plan to long-term support.",
+    "statement": "You bring the goal. We plan it clearly, build it carefully and stay with you long after it goes live.",
+    "text": "One team handles software, AI, data, cloud, cybersecurity and design, so you never have to juggle suppliers. You get a plan you can understand, see progress at every stage and keep the same contact from the first call to the support that follows.",
     "link": "Learn more about us"
   },
   "proof": {
@@ -397,16 +397,6 @@
         "kind": "enterprise",
         "name": "Large companies and multinationals",
         "text": "Process automation, data and cybersecurity, integrated with the systems you already run."
-      },
-      {
-        "kind": "government",
-        "name": "Government institutions",
-        "text": "Network security, IT systems management and online document archiving."
-      },
-      {
-        "kind": "ngo",
-        "name": "NGOs and international organizations",
-        "text": "Dashboards, reporting and document management that keep teams and partners informed."
       }
     ]
   },
@@ -482,6 +472,12 @@
         "text": "Website for a foundation that protects biodiversity: its mission, its reserve, its news and donations.",
         "site": "lamba-foundation.com",
         "tint": "#0b6b35"
+      },
+      "infinitech": {
+        "name": "Infinitech Congo",
+        "text": "Website for InfiniErp, Infinitech Congo’s management software: point of sale, stock, invoices and accounting in one application.",
+        "site": "erp.infinitechcongo.com",
+        "tint": "#12a150"
       }
     },
     "items": [
@@ -491,17 +487,7 @@
         "placeholder": "La Cité des Grands Lacs homepage",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: homepage",
-        "project": "cite",
-        "device": "desktop"
-      },
-      {
-        "image": "/showcase/cite-des-grands-lacs-mobile-home.webp",
-        "alt": "The La Cité des Grands Lacs homepage on a phone, with the headline over an aerial view of the site.",
-        "placeholder": "La Cité des Grands Lacs on phone",
-        "type": "interfaces",
-        "caption": "Website for La Cité des Grands Lacs: homepage on a phone",
-        "project": "cite",
-        "device": "phone"
+        "project": "cite"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-activities.webp",
@@ -509,8 +495,7 @@
         "placeholder": "Activities",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: activities to book in advance",
-        "project": "cite",
-        "device": "desktop"
+        "project": "cite"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-rooms.webp",
@@ -518,8 +503,7 @@
         "placeholder": "Accommodation",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: rooms and bungalows",
-        "project": "cite",
-        "device": "desktop"
+        "project": "cite"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-story.webp",
@@ -527,8 +511,7 @@
         "placeholder": "Our story",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: the destination’s story",
-        "project": "cite",
-        "device": "desktop"
+        "project": "cite"
       },
       {
         "image": "/showcase/cite-des-grands-lacs-experiences.webp",
@@ -536,8 +519,7 @@
         "placeholder": "Things to do",
         "type": "interfaces",
         "caption": "Website for La Cité des Grands Lacs: ways to visit the lake",
-        "project": "cite",
-        "device": "desktop"
+        "project": "cite"
       },
       {
         "image": "/showcase/lamba-foundation-home.webp",
@@ -545,8 +527,47 @@
         "placeholder": "Lamba Foundation homepage",
         "type": "interfaces",
         "caption": "Website for Lamba Foundation: homepage",
-        "project": "lamba",
-        "device": "desktop"
+        "project": "lamba"
+      },
+      {
+        "image": "/showcase/infinierp-homepage.webp",
+        "alt": "Homepage of InfiniErp, with the headline “Toute votre entreprise, une seule application”, buttons to request a demo, and a preview of the sales dashboard.",
+        "placeholder": "InfiniErp homepage",
+        "type": "interfaces",
+        "caption": "Website for InfiniErp: homepage",
+        "project": "infinitech"
+      },
+      {
+        "image": "/showcase/infinierp-features.webp",
+        "alt": "Features section “Simple, complet et adapté à votre métier”, with six cards: data kept on your computer, one application, 21 ready-made business packs, your own branding, cash and Mobile Money payments, and offline use.",
+        "placeholder": "Features",
+        "type": "interfaces",
+        "caption": "Website for InfiniErp: features",
+        "project": "infinitech"
+      },
+      {
+        "image": "/showcase/infinierp-solutions.webp",
+        "alt": "Solutions section with large cards for the Invoicing and Accounting modules, a printed receipt and a phone showing a Mobile Money payment.",
+        "placeholder": "Solutions",
+        "type": "interfaces",
+        "caption": "Website for InfiniErp: invoicing and accounting modules",
+        "project": "infinitech"
+      },
+      {
+        "image": "/showcase/infinierp-in-action.webp",
+        "alt": "Section “Voyez comment se passe une journée”, with three steps on the left and the point-of-sale screen of the software on the right.",
+        "placeholder": "In action",
+        "type": "interfaces",
+        "caption": "Website for InfiniErp: a working day in the software",
+        "project": "infinitech"
+      },
+      {
+        "image": "/showcase/infinierp-modules.webp",
+        "alt": "Section “48 modules qui vont ensemble”, with module icons arranged in two circles around the InfiniErp logo.",
+        "placeholder": "Modules",
+        "type": "interfaces",
+        "caption": "Website for InfiniErp: the 48 modules",
+        "project": "infinitech"
       }
     ],
     "page": {

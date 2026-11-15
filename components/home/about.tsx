@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ActionLink } from "@/components/site/action-link";
 import { ScrollWords } from "@/components/site/motion";
 import type { Dictionary } from "@/content";
 import { pagePath, type Locale } from "@/lib/i18n/routes";
@@ -29,9 +29,7 @@ export function About({
             </p>
             {showLink && (
               <div data-reveal="" className="md:justify-self-end">
-                <Link href={pagePath(lang, "company")} className="text-link">
-                  {about.link}
-                </Link>
+                <ActionLink href={pagePath(lang, "company")}>{about.link}</ActionLink>
               </div>
             )}
           </div>

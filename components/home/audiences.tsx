@@ -5,7 +5,6 @@ import { ParticleField } from "@/components/site/particle-field";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { Dictionary } from "@/content";
-import { cn } from "@/lib/utils";
 import { pagePath, type Locale } from "@/lib/i18n/routes";
 
 export function Audiences({ lang, dict }: { lang: Locale; dict: Dictionary }) {
@@ -23,12 +22,11 @@ export function Audiences({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           </p>
         </div>
 
-        {/* Three cards above two wider ones, so the networks grow as the page goes down. */}
-        <ul className="mt-12 grid gap-4 md:mt-16 lg:grid-cols-6 lg:gap-5">
+        {/* Three cards side by side, one for each size of organization. */}
+        <ul className="mt-12 grid gap-4 md:mt-16 lg:grid-cols-3 lg:gap-5">
           {audiences.items.map((audience, index) => {
-            const wide = index > 2;
             return (
-              <li key={audience.kind} className={cn("flex", wide ? "lg:col-span-3" : "lg:col-span-2")}>
+              <li key={audience.kind} className="flex">
                 <Card
                   variant="glass"
                   data-reveal="card"

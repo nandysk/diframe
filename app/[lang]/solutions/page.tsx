@@ -1,9 +1,9 @@
-import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Closing } from "@/components/home/closing";
 import { Hero } from "@/components/home/hero";
+import { ActionLink } from "@/components/site/action-link";
 import { RevealText } from "@/components/site/motion";
 import { DivisionDiagram } from "@/components/solutions/division-diagram";
 import { buttonVariants } from "@/components/ui/button";
@@ -68,14 +68,13 @@ export default async function SolutionsPage({ params }: PageProps<"/[lang]/solut
                     </p>
                     <h3 className="division-name mt-2">{name}</h3>
                     <p className="mt-4 max-w-[46ch] text-muted-foreground">{item.lead}</p>
-                    <Link
+                    <ActionLink
                       href={divisionPath(lang, index)}
                       aria-label={`${dict.divisions.explore}: ${name}`}
-                      className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-[0.9375rem] font-semibold text-link underline underline-offset-4"
+                      className="mt-6"
                     >
                       {dict.divisions.explore}
-                      <ArrowUpRightIcon aria-hidden="true" size={16} />
-                    </Link>
+                    </ActionLink>
                   </div>
                   <ul className="self-start border-b border-line lg:mt-7">
                     {item.services.map((service) => (

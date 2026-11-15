@@ -1,5 +1,4 @@
-import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
-import Link from "next/link";
+import { ActionLink } from "@/components/site/action-link";
 import { RevealText, order } from "@/components/site/motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import type { Dictionary } from "@/content";
@@ -25,15 +24,11 @@ export function Divisions({ lang, dict }: { lang: Locale; dict: Dictionary }) {
                 </span>
                 <span className="division-name">{division.name}</span>
               </AccordionTrigger>
-              <AccordionContent keepMounted className="pb-[clamp(22px,2.6vw,32px)] pl-11 pr-2 md:pl-16">
+              <AccordionContent keepMounted className="pb-[clamp(22px,2.6vw,32px)] pl-11 pr-2 md:pl-16 [&_a]:no-underline">
                 <p className="max-w-[56ch] text-[1.0625rem] text-muted-foreground">{division.text}</p>
-                <Link
-                  href={divisionPath(lang, index)}
-                  className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-[0.9375rem] font-semibold text-link"
-                >
+                <ActionLink href={divisionPath(lang, index)} className="mt-5">
                   {dict.divisions.explore}
-                  <ArrowUpRightIcon aria-hidden="true" size={16} />
-                </Link>
+                </ActionLink>
               </AccordionContent>
             </AccordionItem>
           ))}

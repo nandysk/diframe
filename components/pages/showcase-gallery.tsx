@@ -7,7 +7,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense, useRef, useState, type ReactNode } from "react";
 import { Dialog, DialogClose, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { badgeVariants } from "@/components/ui/badge";
-import { BrowserFrame, DeviceStage, PhoneFrame } from "@/components/showcase/device-frames";
+import { BrowserFrame, DeviceStage } from "@/components/showcase/device-frames";
 import type { Dictionary } from "@/content";
 import { groupShowcase, pageOrder } from "@/lib/showcase";
 import { cn } from "@/lib/utils";
@@ -57,20 +57,17 @@ function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }
       )}
 
       <div className={cn("space-y-20 md:space-y-28", filters.length > 1 && "mt-8")}>
-        {groups.map(({ project, cover, phone, rest }) => {
+        {groups.map(({ project, cover, rest }) => {
           const details = projects[project as keyof typeof projects];
           // Each frame opens the full-size screenshot in the viewer.
           // The button's label describes the screenshot, so the image inside needs no description of its own.
-          const opens = (item: Item, children: ReactNode, className?: string) =>
+          const opens = (item: Item, children: ReactNode) =>
             item.image ? (
               <button
                 type="button"
                 aria-label={`${page.open}: ${item.caption || item.alt}`}
                 onClick={() => setOpen(viewable.indexOf(item))}
-                className={cn(
-                  "block w-full cursor-zoom-in rounded-[14px] text-left",
-                  className,
-                )}
+                className="block w-full cursor-zoom-in rounded-[14px] text-left"
               >
                 {children}
               </button>
@@ -99,14 +96,6 @@ function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }
                       sizes="(min-width: 1280px) 960px, 80vw"
                     />,
                   )}
-                  phone={
-                    phone &&
-                    opens(
-                      phone,
-                      <PhoneFrame src={phone.image} alt="" sizes="(min-width: 1280px) 208px, 22vw" />,
-                      "rounded-[2.1rem]",
-                    )
-                  }
                 />
               )}
 
@@ -114,22 +103,18 @@ function Gallery({ showcase, type }: { showcase: Showcase; type: string | null }
                 <ul className="mt-4 grid gap-4 sm:grid-cols-2 md:mt-6 md:gap-6">
                   {rest.map((item) => (
                     <li key={item.placeholder}>
-                      {item.device === "phone" ? (
-                        opens(item, <PhoneFrame src={item.image} alt="" sizes="(min-width: 640px) 25vw, 60vw" className="mx-auto max-w-[16rem]" />)
-                      ) : (
-                        <DeviceStage
-                          tint={details?.tint ?? "transparent"}
-                          browser={opens(
-                            item,
-                            <BrowserFrame
-                              site={details?.site ?? ""}
-                              src={item.image}
-                              alt=""
-                              sizes="(min-width: 1280px) 600px, (min-width: 640px) 46vw, 92vw"
-                            />,
-                          )}
-                        />
-                      )}
+                      <DeviceStage
+                        tint={details?.tint ?? "transparent"}
+                        browser={opens(
+                          item,
+                          <BrowserFrame
+                            site={details?.site ?? ""}
+                            src={item.image}
+                            alt=""
+                            sizes="(min-width: 1280px) 600px, (min-width: 640px) 46vw, 92vw"
+                          />,
+                        )}
+                      />
                       <p className="mt-3 text-[0.9375rem] text-muted-foreground">{item.placeholder}</p>
                     </li>
                   ))}
