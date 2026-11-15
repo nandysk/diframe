@@ -463,19 +463,19 @@
     "projects": {
       "cite": {
         "name": "La Cité des Grands Lacs",
-        "text": "Website for an eco-lodge and leisure destination: accommodation, water activities, safari and booking.",
+        "text": "Lets visitors discover the lodge, browse its rooms and activities, and book their stay online.",
         "site": "citedesgrandslacs.com",
         "tint": "#f19100"
       },
       "lamba": {
         "name": "Lamba Foundation",
-        "text": "Website for a foundation that protects biodiversity: its mission, its reserve, its news and donations.",
+        "text": "Presents the foundation’s conservation work and its reserve, shares its news and invites visitors to donate.",
         "site": "lamba-foundation.com",
         "tint": "#0b6b35"
       },
       "infinitech": {
-        "name": "Infinitech Congo",
-        "text": "Website for InfiniErp, Infinitech Congo’s management software: point of sale, stock, invoices and accounting in one application.",
+        "name": "InfiniErp",
+        "text": "Presents InfiniErp, Infinitech Congo’s management app for point of sale, stock, invoices and accounting that works even offline, and lets businesses request a demo.",
         "site": "erp.infinitechcongo.com",
         "tint": "#12a150"
       }

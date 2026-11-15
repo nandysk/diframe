@@ -5,9 +5,9 @@ import type { Dictionary } from "@/content";
 import { pagePath, type Locale } from "@/lib/i18n/routes";
 import { groupShowcase } from "@/lib/showcase";
 
-// Two websites side by side, each with its homepage in a browser window on its own stage.
+// Three websites side by side, each with its homepage in a browser window on its own stage.
 // The other pages are on the Showcase page.
-const SHOWN = 2;
+const SHOWN = 3;
 
 export function ShowcaseStrip({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const { showcase } = dict;
@@ -28,21 +28,20 @@ export function ShowcaseStrip({ lang, dict }: { lang: Locale; dict: Dictionary }
           <ActionLink href={pagePath(lang, "showcase")}>{showcase.link}</ActionLink>
         </div>
 
-        <ul className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-2">
+        <ul className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-3">
           {groups.map(({ project, cover }, index) => {
             const details = showcase.projects[project as keyof typeof showcase.projects];
             if (!cover) return null;
             return (
-              <li key={project} data-reveal="card" style={order(index)} className="flex flex-col">
+              <li key={project} data-reveal="card" style={order(index)}>
                 <DeviceStage
                   tint={details?.tint ?? "transparent"}
-                  className="flex flex-1 flex-col justify-center"
                   browser={
                     <BrowserFrame
                       site={details?.site ?? ""}
                       src={cover.image}
                       alt={cover.alt}
-                      sizes="(min-width: 1024px) 560px, 90vw"
+                      sizes="(min-width: 1024px) 380px, 90vw"
                     />
                   }
                 />

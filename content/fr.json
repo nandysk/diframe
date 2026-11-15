@@ -463,19 +463,19 @@
     "projects": {
       "cite": {
         "name": "La Cité des Grands Lacs",
-        "text": "Site d’un écolodge et lieu de loisirs : hébergements, activités nautiques, safari et réservation.",
+        "text": "Permet aux visiteurs de découvrir le lodge, de parcourir ses chambres et ses activités, et de réserver leur séjour en ligne.",
         "site": "citedesgrandslacs.com",
         "tint": "#f19100"
       },
       "lamba": {
         "name": "Lamba Foundation",
-        "text": "Site d’une fondation qui protège la biodiversité : sa mission, sa réserve, ses actualités et les dons.",
+        "text": "Présente le travail de conservation de la fondation et sa réserve, partage ses actualités et invite les visiteurs à faire un don.",
         "site": "lamba-foundation.com",
         "tint": "#0b6b35"
       },
       "infinitech": {
-        "name": "Infinitech Congo",
-        "text": "Site d’InfiniErp, le logiciel de gestion d’Infinitech Congo : caisse, stock, factures et comptabilité dans une seule application.",
+        "name": "InfiniErp",
+        "text": "Présente InfiniErp, l’application de gestion d’Infinitech Congo pour la caisse, le stock, les factures et la comptabilité, qui fonctionne même sans internet, et permet aux entreprises de demander une démo.",
         "site": "erp.infinitechcongo.com",
         "tint": "#12a150"
       }

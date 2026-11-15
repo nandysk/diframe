@@ -29,7 +29,7 @@ export function BrowserFrame({ site, className, ...shot }: Shot & { site: string
           <span className="size-[8px] rounded-full bg-[#febc2e] ring-1 ring-black/10 ring-inset md:size-[11px]" />
           <span className="size-[8px] rounded-full bg-[#28c840] ring-1 ring-black/10 ring-inset md:size-[11px]" />
         </div>
-        <div className="mac-field mx-auto flex h-[1.125rem] w-[min(66%,20rem)] md:w-[min(50%,20rem)] items-center justify-center gap-1 rounded-[5px] px-2 text-[0.625rem] text-muted-foreground md:h-[1.375rem] md:rounded-[6px] md:text-[0.6875rem]">
+        <div className="mac-field mx-auto flex h-[1.125rem] w-[min(66%,20rem)] md:w-[min(58%,20rem)] items-center justify-center gap-1 rounded-[5px] px-2 text-[0.625rem] text-muted-foreground md:h-[1.375rem] md:rounded-[6px] md:text-[0.6875rem]">
           <svg viewBox="0 0 10 12" className="size-[0.55rem] shrink-0 fill-current opacity-70">
             <path d="M2 5V3.5a3 3 0 0 1 6 0V5h.5A1.5 1.5 0 0 1 10 6.5v4A1.5 1.5 0 0 1 8.5 12h-7A1.5 1.5 0 0 1 0 10.5v-4A1.5 1.5 0 0 1 1.5 5H2Zm1.5 0h3V3.5a1.5 1.5 0 0 0-3 0V5Z" />
           </svg>
