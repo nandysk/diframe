@@ -40,39 +40,18 @@ export function ScrollWords({ text, className }: { text: string; className?: str
   );
 }
 
-const ORBS = {
-  panel: [
-    { c: "--d1", x: "-6%", y: "-18%", s: "clamp(320px, 42vw, 640px)", t: "21s" },
-    { c: "--d4", x: "38%", y: "6%", s: "clamp(300px, 36vw, 560px)", t: "26s" },
-    { c: "--d6", x: "72%", y: "22%", s: "clamp(280px, 34vw, 540px)", t: "18s" },
-  ],
-  wide: [
-    { c: "--d2", x: "-10%", y: "2%", s: "clamp(360px, 50vw, 780px)", t: "24s" },
-    { c: "--d1", x: "30%", y: "46%", s: "clamp(300px, 34vw, 540px)", t: "19s" },
-    { c: "--d4", x: "54%", y: "-12%", s: "clamp(340px, 44vw, 700px)", t: "27s" },
-    { c: "--d6", x: "78%", y: "44%", s: "clamp(300px, 36vw, 580px)", t: "22s" },
-  ],
+// Where the ribbon sits: a band through the middle of a panel, or a taller one for wide sections.
+const RIBBONS = {
+  panel: { top: "28%", height: "62%" },
+  wide: { top: "16%", height: "72%" },
 } as const;
 
 // Colored light behind glass panels. Without something behind it, glass can't be seen.
-export function GlassStage({ variant = "panel", open = false }: { variant?: keyof typeof ORBS; open?: boolean }) {
+export function GlassStage({ variant = "panel", open = false }: { variant?: keyof typeof RIBBONS; open?: boolean }) {
+  const { top, height } = RIBBONS[variant];
   return (
     <div aria-hidden="true" className={open ? "stage stage-open" : "stage"}>
-      {ORBS[variant].map((orb) => (
-        <span
-          key={orb.c}
-          className="orb"
-          style={
-            {
-              "--c": `var(${orb.c})`,
-              "--x": orb.x,
-              "--y": orb.y,
-              "--s": orb.s,
-              "--t": orb.t,
-            } as CSSProperties
-          }
-        />
-      ))}
+      <span className="ribbon" style={{ "--top": top, "--height": height } as CSSProperties} />
     </div>
   );
 }

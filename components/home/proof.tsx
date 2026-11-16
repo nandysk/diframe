@@ -5,6 +5,36 @@ import type { Dictionary } from "@/content";
 import { clientLogos } from "@/lib/brand-assets";
 import { cn } from "@/lib/utils";
 
+function ClientRow({ clients, copy = false }: { clients: string[]; copy?: boolean }) {
+  return (
+    <ul className="logo-track" aria-hidden={copy || undefined}>
+      {clients.map((client) => {
+        const logo = clientLogos[client];
+        return (
+          <li key={client} className="flex flex-none items-center">
+            {logo ? (
+              <Image
+                src={logo.src}
+                alt={copy ? "" : client}
+                width={logo.width}
+                height={logo.height}
+                sizes="180px"
+                className={cn(
+                  "h-auto w-auto max-w-[9.5rem] object-contain max-md:max-w-[7.5rem]",
+                  // Emblems are nearly square, so they get more height to stay as legible as wordmarks.
+                  logo.width / logo.height < 2.6 ? "max-h-[3.25rem] max-md:max-h-11" : "max-h-10 max-md:max-h-8",
+                )}
+              />
+            ) : (
+              <span className="text-[1.0625rem] font-medium whitespace-nowrap">{client}</span>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 export function Proof({ dict }: { dict: Dictionary }) {
   const { proof } = dict;
 
@@ -39,35 +69,21 @@ export function Proof({ dict }: { dict: Dictionary }) {
 
         <div className="relative z-10 mt-10 md:mt-14">
           <h3 className="text-base font-normal tracking-normal text-muted-foreground">{proof.clientsLabel}</h3>
-          {/* Logos keep their own colors, so they sit on white in both themes.
+          {/* One white band, since logos keep their own colors in both themes. Two rows slide
+              slowly in opposite directions and pause on hover; each row's second copy only
+              closes the loop, so screen readers skip it. With reduced motion the rows stop.
               A client without a logo file shows its name until the file arrives. */}
-          <ul className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {proof.clients.map((client, index) => {
-              const logo = clientLogos[client];
-              return (
-                <li key={client} data-reveal="" style={order(index)} className="flex">
-                  <div className="plaque flex min-h-24 w-full items-center justify-center p-4 text-center md:min-h-28">
-                    {logo ? (
-                      <Image
-                        src={logo.src}
-                        alt={client}
-                        width={logo.width}
-                        height={logo.height}
-                        sizes="180px"
-                        className={cn(
-                          "h-auto w-auto max-w-[78%] object-contain",
-                          // Emblems are nearly square, so they get more height to stay as legible as wordmarks.
-                          logo.width / logo.height < 2 ? "max-h-[4.5rem]" : "max-h-14",
-                        )}
-                      />
-                    ) : (
-                      <span className="text-[1.0625rem] font-medium leading-snug tracking-[-0.01em]">{client}</span>
-                    )}
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+          <div data-reveal="" className="plaque mt-6 overflow-hidden">
+            {[
+              proof.clients.slice(0, Math.ceil(proof.clients.length / 2)),
+              proof.clients.slice(Math.ceil(proof.clients.length / 2)),
+            ].map((row, index) => (
+              <div key={index} className={cn("logo-band", index === 1 && "logo-band-reverse")}>
+                <ClientRow clients={row} />
+                <ClientRow clients={row} copy />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -7,10 +7,14 @@ export type BrandImage = { src: string; width: number; height: number };
 export const clientLogos: Record<string, BrandImage> = {
   SLB: { src: "/brand/clients/slb.webp", width: 800, height: 480 },
   "Aker Solutions": { src: "/brand/clients/aker-solutions.webp", width: 800, height: 227 },
+  OneSubsea: { src: "/brand/clients/onesubsea.webp", width: 810, height: 215 },
   Supersonic: { src: "/brand/clients/supersonic.webp", width: 290, height: 60 },
   "La Cité des Grands Lacs": { src: "/brand/clients/la-cite-des-grands-lacs.webp", width: 600, height: 392 },
   "Lamba Foundation": { src: "/brand/clients/lamba-foundation.webp", width: 470, height: 600 },
   "Infinitech Congo": { src: "/brand/clients/infinitech-congo.webp", width: 1200, height: 137 },
+  "Regal Group Congo": { src: "/brand/clients/regal-group-congo.webp", width: 195, height: 45 },
+  "Burotop Iris": { src: "/brand/clients/burotop-iris.webp", width: 521, height: 203 },
+  Burotec: { src: "/brand/clients/burotec.webp", width: 328, height: 81 },
 };
 
 export const certificationImages: Record<string, BrandImage> = {

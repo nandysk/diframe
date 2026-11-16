@@ -32,7 +32,7 @@
   "about": {
     "label": "À propos de Diframe",
     "statement": "Vous apportez l’objectif. Nous le planifions clairement, le réalisons avec soin et restons à vos côtés bien après la mise en ligne.",
-    "text": "Une seule équipe s’occupe du logiciel, de l’IA, des données, du cloud, de la cybersécurité et du design : plus besoin de coordonner plusieurs prestataires. Vous recevez un plan clair, suivez l’avancement à chaque étape et gardez le même interlocuteur, du premier appel au support qui suit.",
+    "text": "Vous recevez un plan clair, suivez l’avancement à chaque étape et gardez le même interlocuteur, du premier appel au support qui suit.",
     "link": "En savoir plus sur nous"
   },
   "proof": {
@@ -62,7 +62,10 @@
       "La Cité des Grands Lacs",
       "Lamba Foundation",
       "Supersonic",
-      "Infinitech Congo"
+      "Infinitech Congo",
+      "Regal Group Congo",
+      "Burotop Iris",
+      "Burotec"
     ]
   },
   "divisions": {
@@ -458,7 +461,7 @@
   },
   "showcase": {
     "title": "Nos réalisations",
-    "text": "Les interfaces, visuels et documents que nous avons conçus.",
+    "text": "Les sites et applications que nous avons conçus.",
     "link": "Voir les réalisations",
     "projects": {
       "cite": {
@@ -469,13 +472,13 @@
       },
       "lamba": {
         "name": "Lamba Foundation",
-        "text": "Présente le travail de conservation de la fondation et sa réserve, partage ses actualités et invite les visiteurs à faire un don.",
+        "text": "Nous avons réalisé le site, qui présente le travail de conservation de la fondation, partage ses actualités et invite aux dons. Nous gérons aussi son hébergement, ses domaines et ses e-mails.",
         "site": "lamba-foundation.com",
         "tint": "#0b6b35"
       },
       "infinitech": {
         "name": "InfiniErp",
-        "text": "Présente InfiniErp, l’application de gestion d’Infinitech Congo pour la caisse, le stock, les factures et la comptabilité, qui fonctionne même sans internet, et permet aux entreprises de demander une démo.",
+        "text": "Nous avons développé InfiniErp, l’application de gestion d’Infinitech Congo pour la caisse, le stock, les factures et la comptabilité, qui fonctionne même sans internet. Nous avons aussi réalisé le site qui la présente et reçoit les demandes de démo.",
         "site": "erp.infinitechcongo.com",
         "tint": "#12a150"
       }
@@ -572,8 +575,8 @@
     ],
     "page": {
       "title": "Un travail à voir.",
-      "text": "Les interfaces, visuels et documents que nous avons conçus.",
-      "description": "Une galerie des interfaces, visuels et documents conçus par Diframe.",
+      "text": "Les sites et applications que nous avons conçus.",
+      "description": "Une galerie des sites et applications conçus par Diframe.",
       "pending": "Nous préparons cette galerie. Les premières pièces apparaîtront bientôt ici.",
       "filterLabel": "Filtrer par type",
       "all": "Tout",
@@ -687,7 +690,7 @@
     "reply": "Nous répondons sous 1 jour ouvré."
   },
   "footer": {
-    "tagline": "Des solutions numériques intelligentes pour les organisations qui veulent mieux fonctionner.",
+    "tagline": "Logiciels, données, infrastructure et sécurité, réalisés et maintenus par une seule équipe.",
     "explore": "Explorer",
     "solutions": "Solutions",
     "privacy": "Confidentialité"

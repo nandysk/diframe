@@ -26,13 +26,13 @@
   "hero": {
     "title": "We build what you need and improve what you already have.",
     "text": "One team for software, AI, data, cloud, cybersecurity and design. We start from scratch or from your existing systems, and support them long after launch.",
-    "primary": "Explore Our Solutions",
-    "secondary": "Let’s Talk"
+    "primary": "Explore our solutions",
+    "secondary": "Let’s talk"
   },
   "about": {
     "label": "About Diframe",
     "statement": "You bring the goal. We plan it clearly, build it carefully and stay with you long after it goes live.",
-    "text": "One team handles software, AI, data, cloud, cybersecurity and design, so you never have to juggle suppliers. You get a plan you can understand, see progress at every stage and keep the same contact from the first call to the support that follows.",
+    "text": "You get a plan you can understand, see progress at every stage and keep the same contact from the first call to the support that follows.",
     "link": "Learn more about us"
   },
   "proof": {
@@ -62,7 +62,10 @@
       "La Cité des Grands Lacs",
       "Lamba Foundation",
       "Supersonic",
-      "Infinitech Congo"
+      "Infinitech Congo",
+      "Regal Group Congo",
+      "Burotop Iris",
+      "Burotec"
     ]
   },
   "divisions": {
@@ -458,7 +461,7 @@
   },
   "showcase": {
     "title": "From the showcase",
-    "text": "Interfaces, graphics and documents we’ve designed.",
+    "text": "Websites and applications we’ve designed.",
     "link": "View the showcase",
     "projects": {
       "cite": {
@@ -469,13 +472,13 @@
       },
       "lamba": {
         "name": "Lamba Foundation",
-        "text": "Presents the foundation’s conservation work and its reserve, shares its news and invites visitors to donate.",
+        "text": "We built the website, which presents the foundation’s conservation work, shares its news and invites donations. We also manage its hosting, domains and email.",
         "site": "lamba-foundation.com",
         "tint": "#0b6b35"
       },
       "infinitech": {
         "name": "InfiniErp",
-        "text": "Presents InfiniErp, Infinitech Congo’s management app for point of sale, stock, invoices and accounting that works even offline, and lets businesses request a demo.",
+        "text": "We built InfiniErp, Infinitech Congo’s management app for point of sale, stock, invoices and accounting, which works even offline. We also built the website that presents it and takes demo requests.",
         "site": "erp.infinitechcongo.com",
         "tint": "#12a150"
       }
@@ -572,8 +575,8 @@
     ],
     "page": {
       "title": "Work you can see.",
-      "text": "Interfaces, graphics and documents we’ve designed.",
-      "description": "A gallery of the interfaces, graphics and documents designed by Diframe.",
+      "text": "Websites and applications we’ve designed.",
+      "description": "A gallery of the websites and applications designed by Diframe.",
       "pending": "We’re preparing this gallery. The first pieces will appear here soon.",
       "filterLabel": "Filter by type",
       "all": "All",
@@ -687,7 +690,7 @@
     "reply": "We reply within 1 business day."
   },
   "footer": {
-    "tagline": "Intelligent digital solutions for organizations that need to work better.",
+    "tagline": "Software, data, infrastructure and security, built and supported by one team.",
     "explore": "Explore",
     "solutions": "Solutions",
     "privacy": "Privacy notice"

@@ -63,7 +63,7 @@
   --liquid-sheen: rgba(255, 255, 255, 0.7);
   --liquid-muted: #4a4c54;
   --liquid-shadow: 0 28px 64px -24px rgba(36, 24, 110, 0.3);
-  --orb: 42%;
+  --ribbon: 0.42;
   --hatch: rgba(10, 11, 13, 0.05);
   --logo-on-dark: none;
   --logo-on-light: block;
@@ -114,7 +114,7 @@
     --liquid-sheen: rgba(255, 255, 255, 0.13);
     --liquid-muted: #c7c8ce;
     --liquid-shadow: 0 32px 72px -24px rgba(0, 0, 0, 0.75);
-    --orb: 62%;
+    --ribbon: 0.8;
     --hatch: rgba(255, 255, 255, 0.05);
     --logo-on-dark: block;
     --logo-on-light: none;
@@ -150,7 +150,7 @@
   --liquid-sheen: rgba(255, 255, 255, 0.13);
   --liquid-muted: #c7c8ce;
   --liquid-shadow: 0 32px 72px -24px rgba(0, 0, 0, 0.75);
-  --orb: 62%;
+  --ribbon: 0.8;
   --hatch: rgba(255, 255, 255, 0.05);
   --logo-on-dark: block;
   --logo-on-light: none;
@@ -355,15 +355,18 @@
     pointer-events: none;
   }
 
-  .orb {
+  /* One continuous band in the brand gradient, blurred so the colors flow into each other. */
+  .ribbon {
     position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: var(--s);
-    aspect-ratio: 1;
+    left: -15%;
+    right: -15%;
+    top: var(--top, 28%);
+    height: var(--height, 62%);
     border-radius: 50%;
-    background: radial-gradient(closest-side, color-mix(in srgb, var(--c) var(--orb), transparent), transparent);
-    animation: orb-drift var(--t, 22s) ease-in-out infinite alternate;
+    background: var(--signal);
+    opacity: var(--ribbon);
+    filter: blur(56px);
+    animation: ribbon-drift 26s ease-in-out infinite alternate;
     animation-play-state: paused;
   }
 
@@ -377,16 +380,16 @@
     overflow: visible;
   }
 
-  .stage[data-run] .orb {
+  .stage[data-run] .ribbon {
     animation-play-state: running;
   }
 
-  @keyframes orb-drift {
+  @keyframes ribbon-drift {
     from {
-      transform: translate3d(-9%, -7%, 0) scale(1);
+      transform: translate3d(-4%, -6%, 0) scale(1);
     }
     to {
-      transform: translate3d(11%, 9%, 0) scale(1.14);
+      transform: translate3d(4%, 6%, 0) scale(1.06);
     }
   }
 
@@ -398,6 +401,72 @@
     box-shadow:
       inset 0 0 0 1px rgba(10, 11, 13, 0.08),
       0 10px 28px -18px rgba(10, 11, 13, 0.35);
+  }
+
+  /* Client logos: two rows sliding slowly in opposite directions on a white band,
+     faded at both edges. */
+  .logo-band {
+    --logo-gap: 4.5rem;
+    display: flex;
+    overflow: hidden;
+    padding-block: 1.25rem;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  }
+
+  .logo-track {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: var(--logo-gap);
+    padding-right: var(--logo-gap);
+    animation: logo-slide 32s linear infinite;
+  }
+
+  .logo-band + .logo-band {
+    border-top: 1px solid rgba(10, 11, 13, 0.07);
+  }
+
+  .logo-band-reverse .logo-track {
+    animation-direction: reverse;
+  }
+
+  .logo-band:hover .logo-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes logo-slide {
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .logo-band {
+      --logo-gap: 2.75rem;
+      padding-block: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-band {
+      -webkit-mask-image: none;
+      mask-image: none;
+      padding-inline: 1.5rem;
+    }
+
+    .logo-track {
+      flex: 1;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 1.75rem;
+      padding-right: 0;
+      animation: none;
+    }
+
+    .logo-track[aria-hidden] {
+      display: none;
+    }
   }
 
   /* The logo's pill, about 30 degrees from vertical. */
@@ -884,7 +953,7 @@
     animation-duration: 1ms !important;
   }
 
-  .orb {
+  .ribbon {
     animation: none;
   }
 
