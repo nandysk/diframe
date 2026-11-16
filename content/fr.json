@@ -461,12 +461,12 @@
   },
   "showcase": {
     "title": "Nos réalisations",
-    "text": "Les sites et applications que nous avons conçus.",
+    "text": "Les sites et applications sur lesquels nous avons travaillé.",
     "link": "Voir les réalisations",
     "projects": {
       "cite": {
         "name": "La Cité des Grands Lacs",
-        "text": "Permet aux visiteurs de découvrir le lodge, de parcourir ses chambres et ses activités, et de réserver leur séjour en ligne.",
+        "text": "Nous avons accompagné ce site par du conseil et des recommandations. Il permet aux visiteurs de découvrir le lodge, de parcourir ses chambres et ses activités, et de réserver leur séjour en ligne.",
         "site": "citedesgrandslacs.com",
         "tint": "#f19100"
       },
@@ -575,8 +575,8 @@
     ],
     "page": {
       "title": "Un travail à voir.",
-      "text": "Les sites et applications que nous avons conçus.",
-      "description": "Une galerie des sites et applications conçus par Diframe.",
+      "text": "Les sites et applications sur lesquels nous avons travaillé.",
+      "description": "Une galerie des sites et applications sur lesquels Diframe a travaillé.",
       "pending": "Nous préparons cette galerie. Les premières pièces apparaîtront bientôt ici.",
       "filterLabel": "Filtrer par type",
       "all": "Tout",

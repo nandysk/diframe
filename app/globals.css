@@ -63,7 +63,7 @@
   --liquid-sheen: rgba(255, 255, 255, 0.7);
   --liquid-muted: #4a4c54;
   --liquid-shadow: 0 28px 64px -24px rgba(36, 24, 110, 0.3);
-  --ribbon: 0.42;
+  --cloud: 42%;
   --hatch: rgba(10, 11, 13, 0.05);
   --logo-on-dark: none;
   --logo-on-light: block;
@@ -114,7 +114,7 @@
     --liquid-sheen: rgba(255, 255, 255, 0.13);
     --liquid-muted: #c7c8ce;
     --liquid-shadow: 0 32px 72px -24px rgba(0, 0, 0, 0.75);
-    --ribbon: 0.8;
+    --cloud: 62%;
     --hatch: rgba(255, 255, 255, 0.05);
     --logo-on-dark: block;
     --logo-on-light: none;
@@ -150,7 +150,7 @@
   --liquid-sheen: rgba(255, 255, 255, 0.13);
   --liquid-muted: #c7c8ce;
   --liquid-shadow: 0 32px 72px -24px rgba(0, 0, 0, 0.75);
-  --ribbon: 0.8;
+  --cloud: 62%;
   --hatch: rgba(255, 255, 255, 0.05);
   --logo-on-dark: block;
   --logo-on-light: none;
@@ -355,18 +355,27 @@
     pointer-events: none;
   }
 
-  /* One continuous band in the brand gradient, blurred so the colors flow into each other. */
-  .ribbon {
+  /* Large clouds of the brand colors, overlapping and blurred together into one light. */
+  .clouds {
     position: absolute;
-    left: -15%;
-    right: -15%;
-    top: var(--top, 28%);
-    height: var(--height, 62%);
+    inset: 0;
+    filter: blur(40px) saturate(1.1);
+  }
+
+  .cloud {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--s);
+    aspect-ratio: 1.5;
     border-radius: 50%;
-    background: var(--signal);
-    opacity: var(--ribbon);
-    filter: blur(56px);
-    animation: ribbon-drift 26s ease-in-out infinite alternate;
+    background: radial-gradient(
+      closest-side,
+      color-mix(in srgb, var(--c) var(--cloud), transparent),
+      color-mix(in srgb, var(--c) calc(var(--cloud) * 0.35), transparent) 60%,
+      transparent
+    );
+    animation: cloud-drift var(--t, 22s) ease-in-out infinite alternate;
     animation-play-state: paused;
   }
 
@@ -380,11 +389,11 @@
     overflow: visible;
   }
 
-  .stage[data-run] .ribbon {
+  .stage[data-run] .cloud {
     animation-play-state: running;
   }
 
-  @keyframes ribbon-drift {
+  @keyframes cloud-drift {
     from {
       transform: translate3d(-4%, -6%, 0) scale(1);
     }
@@ -953,7 +962,7 @@
     animation-duration: 1ms !important;
   }
 
-  .ribbon {
+  .cloud {
     animation: none;
   }
 

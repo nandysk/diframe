@@ -40,18 +40,43 @@ export function ScrollWords({ text, className }: { text: string; className?: str
   );
 }
 
-// Where the ribbon sits: a band through the middle of a panel, or a taller one for wide sections.
-const RIBBONS = {
-  panel: { top: "28%", height: "62%" },
-  wide: { top: "16%", height: "72%" },
+// Three or four large, overlapping clouds of the brand colors. They overlap and are blurred
+// together, so they read as one continuous light instead of separate spots.
+const CLOUDS = {
+  panel: [
+    { c: "--d1", x: "-14%", y: "-4%", s: "clamp(420px, 58vw, 900px)", t: "21s" },
+    { c: "--d4", x: "22%", y: "4%", s: "clamp(440px, 60vw, 940px)", t: "26s" },
+    { c: "--d6", x: "54%", y: "10%", s: "clamp(420px, 58vw, 900px)", t: "18s" },
+  ],
+  wide: [
+    { c: "--d1", x: "-16%", y: "4%", s: "clamp(420px, 56vw, 880px)", t: "24s" },
+    { c: "--d2", x: "12%", y: "22%", s: "clamp(400px, 52vw, 820px)", t: "19s" },
+    { c: "--d4", x: "36%", y: "0%", s: "clamp(440px, 58vw, 900px)", t: "27s" },
+    { c: "--d6", x: "60%", y: "18%", s: "clamp(420px, 56vw, 880px)", t: "22s" },
+  ],
 } as const;
 
 // Colored light behind glass panels. Without something behind it, glass can't be seen.
-export function GlassStage({ variant = "panel", open = false }: { variant?: keyof typeof RIBBONS; open?: boolean }) {
-  const { top, height } = RIBBONS[variant];
+export function GlassStage({ variant = "panel", open = false }: { variant?: keyof typeof CLOUDS; open?: boolean }) {
   return (
     <div aria-hidden="true" className={open ? "stage stage-open" : "stage"}>
-      <span className="ribbon" style={{ "--top": top, "--height": height } as CSSProperties} />
+      <div className="clouds">
+        {CLOUDS[variant].map((cloud) => (
+          <span
+            key={cloud.c}
+            className="cloud"
+            style={
+              {
+                "--c": `var(${cloud.c})`,
+                "--x": cloud.x,
+                "--y": cloud.y,
+                "--s": cloud.s,
+                "--t": cloud.t,
+              } as CSSProperties
+            }
+          />
+        ))}
+      </div>
     </div>
   );
 }
