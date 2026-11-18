@@ -37,6 +37,13 @@ const ICONS: Record<string, ReactNode> = {
       <rect x="12.5" y="12.5" width="7" height="7" rx="1.5" {...fill} />
     </>
   ),
+  audit: (
+    <>
+      <path d="M19 27H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11l6 6v4M18 4v6h6M10 12h5M10 17h4" />
+      <circle cx="22" cy="21" r="4.5" {...fill} />
+      <path d="M25.5 24.5L29 28" />
+    </>
+  ),
   domain: (
     <>
       <circle cx="16" cy="12" r="9" />

@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteName": "Diframe",
-    "homeTitle": "Diframe | Software, AI, data, cloud and cybersecurity",
+    "homeTitle": "Diframe | Software, AI, data, cloud, cybersecurity and design",
     "description": "One team for software, AI, data, cloud, cybersecurity and design. We build what you need, improve what you already have, and support it long after launch.",
     "shareAlt": "The Diframe logo on a dark background lit with blue and purple light, above the address diframe.studio."
   },
@@ -51,7 +51,7 @@
       {
         "lead": "",
         "value": "1,000+",
-        "label": "users on our SaaS"
+        "label": "users on software we’ve built"
       }
     ],
     "clientsLabel": "Clients we’ve worked with",
@@ -148,9 +148,9 @@
             "icon": "saas"
           },
           {
-            "name": "Custom domain name solutions",
-            "text": "Domain names chosen, registered and configured for your organization and its services.",
-            "icon": "domain"
+            "name": "Digital consulting and audit",
+            "text": "A review of your website, applications or digital project, with clear recommendations on what to improve.",
+            "icon": "audit"
           }
         ],
         "needs": [
@@ -161,7 +161,7 @@
         "stat": {
           "lead": "",
           "value": "1,000+",
-          "label": "users on our SaaS"
+          "label": "users on software we’ve built"
         },
         "certifications": []
       },
@@ -250,7 +250,7 @@
         ]
       },
       {
-        "lead": "We design, deploy and manage the networks, servers and cloud environments your organization depends on.",
+        "lead": "We design, deploy and manage the networks, servers, cloud environments, hosting and email your organization depends on.",
         "services": [
           {
             "name": "IT infrastructure design",
@@ -276,6 +276,11 @@
             "name": "IT systems management",
             "text": "Ongoing management of your systems, so issues are handled early.",
             "icon": "systemsManagement"
+          },
+          {
+            "name": "Domains, hosting and business email",
+            "text": "Domain names, website hosting and professional email addresses, set up and managed for you.",
+            "icon": "domain"
           }
         ],
         "needs": [
@@ -309,8 +314,8 @@
             "icon": "infrastructureProtection"
           },
           {
-            "name": "Cybersecurity consulting",
-            "text": "A review of your risks, with clear priorities on what to fix.",
+            "name": "Cybersecurity consulting and audit",
+            "text": "An audit of your systems and risks, with clear priorities on what to fix.",
             "icon": "consulting"
           },
           {
@@ -537,7 +542,7 @@
         "alt": "Homepage of InfiniErp, with the headline “Toute votre entreprise, une seule application”, buttons to request a demo, and a preview of the sales dashboard.",
         "placeholder": "InfiniErp homepage",
         "type": "interfaces",
-        "caption": "Website for InfiniErp: homepage",
+        "caption": "InfiniErp: homepage",
         "project": "infinitech"
       },
       {
@@ -545,7 +550,7 @@
         "alt": "Features section “Simple, complet et adapté à votre métier”, with six cards: data kept on your computer, one application, 21 ready-made business packs, your own branding, cash and Mobile Money payments, and offline use.",
         "placeholder": "Features",
         "type": "interfaces",
-        "caption": "Website for InfiniErp: features",
+        "caption": "InfiniErp: features",
         "project": "infinitech"
       },
       {
@@ -553,7 +558,7 @@
         "alt": "Solutions section with large cards for the Invoicing and Accounting modules, a printed receipt and a phone showing a Mobile Money payment.",
         "placeholder": "Solutions",
         "type": "interfaces",
-        "caption": "Website for InfiniErp: invoicing and accounting modules",
+        "caption": "InfiniErp: invoicing and accounting modules",
         "project": "infinitech"
       },
       {
@@ -561,7 +566,7 @@
         "alt": "Section “Voyez comment se passe une journée”, with three steps on the left and the point-of-sale screen of the software on the right.",
         "placeholder": "In action",
         "type": "interfaces",
-        "caption": "Website for InfiniErp: a working day in the software",
+        "caption": "InfiniErp: a working day in the software",
         "project": "infinitech"
       },
       {
@@ -569,7 +574,7 @@
         "alt": "Section “48 modules qui vont ensemble”, with module icons arranged in two circles around the InfiniErp logo.",
         "placeholder": "Modules",
         "type": "interfaces",
-        "caption": "Website for InfiniErp: the 48 modules",
+        "caption": "InfiniErp: the 48 modules",
         "project": "infinitech"
       }
     ],
@@ -605,8 +610,8 @@
   },
   "company": {
     "title": "One partner for the systems you rely on.",
-    "text": "Since 2021, we’ve built, improved and secured software, data and infrastructure for organizations of every size. Here is what we value, and what you can expect from us.",
-    "description": "Since 2021, Diframe has built, improved and secured systems for organizations of every size. What we value, and what you can expect when you work with us.",
+    "text": "Since 2021, we’ve helped organizations of every size with software, AI, data, infrastructure, security and design. Here is what we value, and what you can expect from us.",
+    "description": "Since 2021, Diframe has helped organizations of every size with software, AI, data, infrastructure, security and design. What we value, and what you can expect when you work with us.",
     "sinceLabel": "Active since",
     "sinceValue": "2021"
   },
@@ -690,7 +695,7 @@
     "reply": "We reply within 1 business day."
   },
   "footer": {
-    "tagline": "Software, data, infrastructure and security, built and supported by one team.",
+    "tagline": "Software, AI, data, cloud, security and design, built and supported by one team.",
     "explore": "Explore",
     "solutions": "Solutions",
     "privacy": "Privacy notice"
@@ -752,7 +757,7 @@
     "title": "Privacy notice",
     "text": "What this website collects, why, and the choices you have.",
     "description": "How the Diframe website handles the information you send through the contact form.",
-    "updated": "Last updated: November 5, 2026",
+    "updated": "Last updated: November 17, 2026",
     "sections": [
       {
         "title": "What you send us",
@@ -773,6 +778,12 @@
         ]
       },
       {
+        "title": "Visit statistics",
+        "paragraphs": [
+          "We count visits to this website with our hosting provider’s analytics, to see which pages are read. It doesn’t use cookies or follow you on other websites, and we only see totals, such as the number of visits, the pages viewed, and the countries and devices visitors use."
+        ]
+      },
+      {
         "title": "Spam protection",
         "paragraphs": [
           "To limit automated messages, we check your connection’s IP address when you send the form. We keep it only in temporary memory and don’t store it with your request."
@@ -781,7 +792,7 @@
       {
         "title": "Cookies and browser storage",
         "paragraphs": [
-          "We save your language choice in a cookie, for up to one year, and your theme choice in your browser. Both only keep the site the way you set it. This website doesn’t use analytics or advertising cookies."
+          "We save your language choice in a cookie, for up to one year, and your theme choice in your browser. Both only keep the site the way you set it. This website doesn’t use advertising cookies."
         ]
       },
       {
